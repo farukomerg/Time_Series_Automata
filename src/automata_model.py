@@ -1,12 +1,13 @@
 """
 Otomata tabanlı zaman serisi modelleme bileşenleri.
 
-Dönüşüm zinciri: ham/PC1 → PAA → SAX → sliding window (ardışık örüntüler).
+Dönüşüm zinciri: ham/PC1 → PAA → SAX → sliding window → geçiş matrisi.
 """
 
 from __future__ import annotations
 
-from typing import Union
+from collections import defaultdict
+from typing import Iterable, Union
 
 import numpy as np
 import pandas as pd
@@ -15,6 +16,9 @@ import pandas as pd
 SeriesInput = Union[np.ndarray, pd.Series, list[float]]
 NumericInput = Union[np.ndarray, pd.Series, list[float]]
 SymbolSequenceInput = Union[str, list[str]]
+State = str
+TransitionCounts = dict[State, dict[State, int]]
+TransitionProbabilities = dict[State, dict[State, float]]
 
 
 class PAA:
@@ -227,3 +231,63 @@ def extract_sliding_patterns(
     window_size: int,
 ) -> list[str]:
     return SlidingWindowExtractor(window_size=window_size).extract(symbol_sequence)
+
+
+class ProbabilisticAutomaton:
+    # pattern = state; ardışık çiftlerden P(Si->Sj) frekansla
+
+    def __init__(self) -> None:
+        self.transition_counts: TransitionCounts = {}
+        self.transition_probabilities: TransitionProbabilities = {}
+        self.outbound_totals: dict[State, int] = {}
+        self.states: set[State] = set()
+
+    def fit_sequence(self, patterns: list[str]) -> ProbabilisticAutomaton:
+        return self.fit_sequences([patterns])
+
+    def fit_sequences(self, pattern_sequences: Iterable[list[str]]) -> ProbabilisticAutomaton:
+        counts: dict[State, dict[State, int]] = defaultdict(lambda: defaultdict(int))
+
+        for sequence in pattern_sequences:
+            if len(sequence) < 2:
+                continue
+            for i in range(len(sequence) - 1):
+                src, dst = sequence[i], sequence[i + 1]
+                counts[src][dst] += 1
+                self.states.add(src)
+                self.states.add(dst)
+
+        self.transition_counts = {s: dict(t) for s, t in counts.items()}
+        self._compute_probabilities()
+        return self
+
+    def _compute_probabilities(self) -> None:
+        probs: TransitionProbabilities = {}
+        outbound: dict[State, int] = {}
+
+        for src, targets in self.transition_counts.items():
+            total = sum(targets.values())
+            outbound[src] = total
+            if total == 0:
+                continue
+            probs[src] = {dst: c / total for dst, c in targets.items()}
+
+        self.outbound_totals = outbound
+        self.transition_probabilities = probs
+
+    def get_transition_probability(self, from_state: State, to_state: State) -> float:
+        return self.transition_probabilities.get(from_state, {}).get(to_state, 0.0)
+
+    def to_dataframe(self) -> pd.DataFrame:
+        ordered = sorted(self.states)
+        if not ordered:
+            return pd.DataFrame()
+        df = pd.DataFrame(0.0, index=ordered, columns=ordered)
+        for src, targets in self.transition_probabilities.items():
+            for dst, p in targets.items():
+                df.loc[src, dst] = p
+        return df
+
+
+def build_transition_matrix(pattern_sequences: Iterable[list[str]]) -> ProbabilisticAutomaton:
+    return ProbabilisticAutomaton().fit_sequences(pattern_sequences)
