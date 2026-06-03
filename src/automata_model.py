@@ -1,7 +1,7 @@
 """
 Otomata tabanlı zaman serisi modelleme bileşenleri.
 
-Dönüşüm zinciri: ham/PC1 seri → PAA (sayısal indirgeme) → SAX (sembolik pattern).
+Dönüşüm zinciri: ham/PC1 → PAA → SAX → sliding window (ardışık örüntüler).
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ import pandas as pd
 # Ham/PCA girdisi ve PAA çıktısı için ortak sayısal tip
 SeriesInput = Union[np.ndarray, pd.Series, list[float]]
 NumericInput = Union[np.ndarray, pd.Series, list[float]]
+SymbolSequenceInput = Union[str, list[str]]
 
 
 class PAA:
@@ -197,3 +198,32 @@ def apply_sax(paa_values: NumericInput, alphabet_size: int) -> str:
         Sembolik pattern dizgesi.
     """
     return SAX(alphabet_size=alphabet_size).transform(paa_values)
+
+
+class SlidingWindowExtractor:
+    """SAX sembol dizisinden kayan pencere ile ardışık örüntü (state adayı) çıkarır."""
+
+    def __init__(self, window_size: int) -> None:
+        if window_size < 1:
+            raise ValueError(f"window_size en az 1 olmalıdır; verilen: {window_size}")
+        self.window_size = window_size
+
+    def extract(self, symbol_sequence: SymbolSequenceInput) -> list[str]:
+        word = self._to_symbol_string(symbol_sequence)
+        n, ws = len(word), self.window_size
+        if n < ws:
+            return []
+        return [word[i : i + ws] for i in range(n - ws + 1)]
+
+    @staticmethod
+    def _to_symbol_string(symbol_sequence: SymbolSequenceInput) -> str:
+        if isinstance(symbol_sequence, str):
+            return symbol_sequence
+        return "".join(symbol_sequence)
+
+
+def extract_sliding_patterns(
+    symbol_sequence: SymbolSequenceInput,
+    window_size: int,
+) -> list[str]:
+    return SlidingWindowExtractor(window_size=window_size).extract(symbol_sequence)
