@@ -1,0 +1,31 @@
+# config.yaml - Merkezi Konfigürasyon Dosyası
+# Proje kuralları gereği (Madde 1) koda gömülü sabit (hard-coded) değer kullanılmayacaktır.
+
+project:
+  name: "Time_Series_Automata"
+  data_dir: "../data/raw"
+
+experiment:
+  random_seeds: [42, 123, 2026, 7, 999]
+  scenarios:
+    - "original"
+    - "gaussian_noise"
+    - "unseen_data"
+
+deep_learning:
+  epoch_limit: 50
+  batch_size: 32
+  early_stopping_patience: 5
+  lstm:
+    hidden_size: 64
+    num_layers: 2
+    dropout: 0.2
+  cnn_1d:
+    filters: 64
+    kernel_size: 3
+
+automata:
+  window_size_variants: [3, 4, 5, 6]
+  alphabet_size_variants: [3, 4, 5, 6]
+  default_window_size: 4
+  default_alphabet_size: 3
