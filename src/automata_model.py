@@ -275,8 +275,22 @@ class ProbabilisticAutomaton:
         self.outbound_totals = outbound
         self.transition_probabilities = probs
 
+    def resolve_state(self, pattern: str) -> State:
+        # unseen -> en yakın eğitim state'i
+        if pattern in self.states:
+            return pattern
+        if not self.states:
+            raise ValueError("otomata eğitilmemiş")
+        nearest, _ = nearest_pattern(pattern, self.states)
+        return nearest
+
+    def map_patterns(self, patterns: list[str]) -> list[State]:
+        return [self.resolve_state(p) for p in patterns]
+
     def get_transition_probability(self, from_state: State, to_state: State) -> float:
-        return self.transition_probabilities.get(from_state, {}).get(to_state, 0.0)
+        src = self.resolve_state(from_state)
+        dst = self.resolve_state(to_state)
+        return self.transition_probabilities.get(src, {}).get(dst, 0.0)
 
     def to_dataframe(self) -> pd.DataFrame:
         ordered = sorted(self.states)
@@ -291,3 +305,39 @@ class ProbabilisticAutomaton:
 
 def build_transition_matrix(pattern_sequences: Iterable[list[str]]) -> ProbabilisticAutomaton:
     return ProbabilisticAutomaton().fit_sequences(pattern_sequences)
+
+
+def levenshtein_distance(a: str, b: str) -> int:
+    if a == b:
+        return 0
+    if not a:
+        return len(b)
+    if not b:
+        return len(a)
+
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        curr = [i]
+        for j, cb in enumerate(b, 1):
+            ins = curr[j - 1] + 1
+            delete = prev[j] + 1
+            sub = prev[j - 1] + (0 if ca == cb else 1)
+            curr.append(min(ins, delete, sub))
+        prev = curr
+    return prev[-1]
+
+
+def nearest_pattern(query: str, vocabulary: Iterable[str]) -> tuple[str, int]:
+    vocab = list(vocabulary)
+    if not vocab:
+        raise ValueError("sözlük boş")
+    if query in vocab:
+        return query, 0
+
+    best = vocab[0]
+    best_d = levenshtein_distance(query, best)
+    for p in vocab[1:]:
+        d = levenshtein_distance(query, p)
+        if d < best_d:
+            best, best_d = p, d
+    return best, best_d
