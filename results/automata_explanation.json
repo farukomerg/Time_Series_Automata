@@ -1,0 +1,7499 @@
+[
+  {
+    "time_step": 0,
+    "state": "cbbc",
+    "pattern": "cbbc",
+    "status": "seen",
+    "mapped_to": "cbbc",
+    "probability": 1.0,
+    "decision": "normal"
+  },
+  {
+    "time_step": 1,
+    "state": "cbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.3125,
+    "decision": "normal"
+  },
+  {
+    "time_step": 2,
+    "state": "bbcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 0.0744047619047619,
+    "decision": "normal"
+  },
+  {
+    "time_step": 3,
+    "state": "bccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.05040322580645161,
+    "decision": "normal"
+  },
+  {
+    "time_step": 4,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 0.014680551205762603,
+    "decision": "normal"
+  },
+  {
+    "time_step": 5,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.013403981535696288,
+    "decision": "normal"
+  },
+  {
+    "time_step": 6,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.011947027020946691,
+    "decision": "normal"
+  },
+  {
+    "time_step": 7,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.009909549544506171,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 8,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.006118848363324594,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 9,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0016587239539132934,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 10,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0007045907060870627,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 11,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0006115315562265072,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 12,
+    "state": "abcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 0.0001248023584135729,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 13,
+    "state": "bccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 8.454353311887197e-05,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 14,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 2.46243300346229e-05,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 15,
+    "state": "cbba",
+    "pattern": "bbab",
+    "status": "seen",
+    "mapped_to": "bbab",
+    "probability": 2.141246089967209e-06,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 16,
+    "state": "bbab",
+    "pattern": "babb",
+    "status": "seen",
+    "mapped_to": "babb",
+    "probability": 9.176768957002324e-07,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 17,
+    "state": "babb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 5.243867975429899e-07,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 18,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.9664504907862122e-07,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 19,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 5.212278409312852e-08,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 20,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 3.1615459204028776e-08,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 21,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 2.3586136231577025e-08,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 22,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.5879774888586512e-08,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 23,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 9.105375509510615e-09,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 24,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 5.220972195820307e-09,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 25,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 2.9936767177868735e-09,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 26,
+    "state": "cccc",
+    "pattern": "ccca",
+    "status": "seen",
+    "mapped_to": "ccca",
+    "probability": 6.866231004098334e-11,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 27,
+    "state": "ccca",
+    "pattern": "ccaa",
+    "status": "seen",
+    "mapped_to": "ccaa",
+    "probability": 3.9235605737704765e-11,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 28,
+    "state": "ccaa",
+    "pattern": "caaa",
+    "status": "seen",
+    "mapped_to": "caaa",
+    "probability": 3.9235605737704765e-11,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 29,
+    "state": "caaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 3.5668732488822515e-11,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 30,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 9.66923471082538e-12,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 31,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 3.936148643344845e-12,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 32,
+    "state": "aabb",
+    "pattern": "abbc",
+    "status": "seen",
+    "mapped_to": "abbc",
+    "probability": 2.228008666044252e-12,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 33,
+    "state": "abbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 5.749699783340005e-13,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 34,
+    "state": "bbcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 2.956988460003431e-13,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 35,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 1.2320785250014298e-13,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 36,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 8.564448283546524e-14,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 37,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 2.2700947257593198e-14,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 38,
+    "state": "bbbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 7.815080203433724e-15,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 39,
+    "state": "bbcb",
+    "pattern": "bcbc",
+    "status": "seen",
+    "mapped_to": "bcbc",
+    "probability": 3.572608092998274e-15,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 40,
+    "state": "bcbc",
+    "pattern": "cbcb",
+    "status": "seen",
+    "mapped_to": "cbcb",
+    "probability": 7.145216185996549e-16,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 41,
+    "state": "cbcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 4.659923599562967e-16,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 42,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 1.9416348331512364e-16,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 43,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.3496729937758593e-16,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 44,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 3.577446489526374e-17,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 45,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 2.1699265592209157e-17,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 46,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 1.6188340997362387e-17,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 47,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.0899081067531112e-17,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 48,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 4.399629054783201e-18,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 49,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 2.8632506547001786e-18,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 50,
+    "state": "ccbb",
+    "pattern": "cbbc",
+    "status": "seen",
+    "mapped_to": "cbbc",
+    "probability": 1.945898503194296e-19,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 51,
+    "state": "cbbc",
+    "pattern": "bbca",
+    "status": "seen",
+    "mapped_to": "bbca",
+    "probability": 6.080932822482175e-20,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 52,
+    "state": "bbca",
+    "pattern": "bcaa",
+    "status": "seen",
+    "mapped_to": "bcaa",
+    "probability": 6.080932822482175e-20,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 53,
+    "state": "bcaa",
+    "pattern": "caaa",
+    "status": "seen",
+    "mapped_to": "caaa",
+    "probability": 5.320816219671903e-20,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 54,
+    "state": "caaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 4.837105654247184e-20,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 55,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 2.986767045544195e-20,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 56,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.8442386877607228e-20,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 57,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 4.999442225857381e-21,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 58,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 2.0351711715879606e-21,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 59,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 6.911902092185526e-22,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 60,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 2.591963284569572e-22,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 61,
+    "state": "bbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 3.435132063887385e-23,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 62,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 3.360455279889833e-23,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 63,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 2.9951884016409384e-23,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 64,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 2.4843810773300807e-23,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 65,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.5340304844959836e-23,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 66,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 9.472176184387851e-24,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 67,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 1.0556340928384051e-24,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 68,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 8.333953364513724e-25,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 69,
+    "state": "aacc",
+    "pattern": "accc",
+    "status": "seen",
+    "mapped_to": "accc",
+    "probability": 7.639457250804247e-25,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 70,
+    "state": "accc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 5.787467614245642e-25,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 71,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 3.318502072388556e-25,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 72,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.9028108213237134e-25,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 73,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.09106125075901e-25,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 74,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 4.404283948018022e-26,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 75,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 2.8662800296625225e-26,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 76,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 1.8366454559002574e-26,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 77,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.2766925730038374e-26,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 78,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 7.690919114480949e-27,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 79,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 4.633083803904187e-27,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 80,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 1.2280463094685797e-27,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 81,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 7.448805483661877e-28,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 82,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 5.557045360827115e-28,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 83,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 3.7413770746162757e-28,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 84,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 1.5102806539735426e-28,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 85,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 9.828810605224643e-29,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 86,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 2.862760370453779e-29,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 87,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 2.613824686066494e-29,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 88,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 2.3297133071462227e-29,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 89,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.9323978594158591e-29,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 90,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 5.238427932151425e-30,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 91,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 2.2251729269315786e-30,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 92,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 1.931282162997219e-30,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 93,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 1.537142946059011e-30,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 94,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.0349081220991362e-30,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 95,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 5.934106204696882e-31,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 96,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 2.3954190184097507e-31,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 97,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 1.558923488171425e-31,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 98,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 9.98921846789457e-32,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 99,
+    "state": "cbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 6.09098687066742e-33,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 100,
+    "state": "bbbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 2.0968971194100956e-33,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 101,
+    "state": "bbcb",
+    "pattern": "bcbc",
+    "status": "seen",
+    "mapped_to": "bcbc",
+    "probability": 9.58581540301758e-34,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 102,
+    "state": "bcbc",
+    "pattern": "cbcb",
+    "status": "seen",
+    "mapped_to": "cbcb",
+    "probability": 1.917163080603516e-34,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 103,
+    "state": "cbcb",
+    "pattern": "bcbc",
+    "status": "seen",
+    "mapped_to": "bcbc",
+    "probability": 1.667098330959579e-35,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 104,
+    "state": "bcbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 1.1669688316717053e-35,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 105,
+    "state": "cbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 7.9566056704889e-36,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 106,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 5.356922629636091e-36,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 107,
+    "state": "cccc",
+    "pattern": "ccca",
+    "status": "seen",
+    "mapped_to": "ccca",
+    "probability": 1.2286519792743328e-37,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 108,
+    "state": "ccca",
+    "pattern": "ccaa",
+    "status": "seen",
+    "mapped_to": "ccaa",
+    "probability": 7.020868452996187e-38,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 109,
+    "state": "ccaa",
+    "pattern": "caaa",
+    "status": "seen",
+    "mapped_to": "caaa",
+    "probability": 7.020868452996187e-38,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 110,
+    "state": "caaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 6.382607684541988e-38,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 111,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 3.9410679979852634e-38,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 112,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 2.433490781888491e-38,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 113,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.502607259901026e-38,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 114,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 4.0733329334666366e-39,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 115,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 1.6581709286678343e-39,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 116,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 5.6315239086832106e-40,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 117,
+    "state": "abbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 2.581115124813138e-40,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 118,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 1.5655944199686247e-40,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 119,
+    "state": "bbcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 3.7276057618300586e-41,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 120,
+    "state": "bccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 4.8098138862323335e-42,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 121,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 4.294476684136012e-42,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 122,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 4.164341027040981e-42,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 123,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 3.454143332506861e-42,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 124,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 9.363641564024622e-43,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 125,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 3.811747893319758e-43,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 126,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 1.294555888297276e-43,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 127,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 4.854584581114785e-44,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 128,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 2.924448542840232e-44,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 129,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.7617159896627904e-44,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 130,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.0612746925679462e-44,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 131,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 6.393221039565941e-45,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 132,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 1.6945887092825388e-45,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 133,
+    "state": "bbbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 5.833829982775953e-46,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 134,
+    "state": "bbcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 3.000255419713347e-46,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 135,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 1.2501064248805613e-46,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 136,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 8.689764172950242e-47,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 137,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 5.234797694548339e-47,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 138,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 1.3875367383140178e-47,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 139,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 8.416206445511256e-48,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 140,
+    "state": "bbcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 2.0038586775026798e-48,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 141,
+    "state": "bccb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 3.878436150005187e-49,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 142,
+    "state": "ccbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 9.696090375012967e-50,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 143,
+    "state": "cbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 6.610970710236113e-50,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 144,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 4.45095057718867e-50,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 145,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 1.7967139944614817e-50,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 146,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 1.169290059887631e-50,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 147,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 3.4056992035562064e-51,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 148,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 3.1095514467252317e-51,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 149,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 2.7715567242550975e-51,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 150,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 2.298888135622445e-51,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 151,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 2.562013886085255e-52,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 152,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 2.022642541646254e-52,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 153,
+    "state": "aacc",
+    "pattern": "accc",
+    "status": "seen",
+    "mapped_to": "accc",
+    "probability": 1.854088996509066e-52,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 154,
+    "state": "accc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.404612876143232e-52,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 155,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 8.053972913665321e-53,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 156,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 3.2511450293694876e-53,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 157,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 2.115824542923e-53,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 158,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 1.3557710663390098e-53,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 159,
+    "state": "cbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 3.3067586983878286e-54,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 160,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 3.2348726397272234e-54,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 161,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 2.883256048452525e-54,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 162,
+    "state": "baaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 2.2350822081027327e-56,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 163,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 1.7645385853442627e-56,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 164,
+    "state": "aacc",
+    "pattern": "accc",
+    "status": "seen",
+    "mapped_to": "accc",
+    "probability": 1.6174937032322407e-56,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 165,
+    "state": "accc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.2253740176001823e-56,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 166,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 7.02622716513866e-57,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 167,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 4.0287999800106996e-57,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 168,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 1.626304579086888e-57,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 169,
+    "state": "cccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 2.968651215793526e-58,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 170,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 2.650581442672791e-58,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 171,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 2.570260792894828e-58,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 172,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 2.131921742943772e-58,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 173,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.3163974617574496e-58,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 174,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 8.128357821092687e-59,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 175,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 5.019016124469882e-59,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 176,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 3.0990912816756804e-59,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 177,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.9135955203117906e-59,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 178,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.1815875953732441e-59,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 179,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 7.295947501551658e-60,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 180,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 4.505027824753283e-60,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 181,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 2.7817189881759733e-60,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 182,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.7176276884821523e-60,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 183,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.0605833618639797e-60,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 184,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 6.548782806690237e-61,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 185,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 4.043676130637044e-61,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 186,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 1.0961772643293191e-61,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 187,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 4.6563282024608245e-62,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 188,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 4.041341458739584e-62,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 189,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 3.2165778957315056e-62,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 190,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 2.1656168010865583e-62,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 191,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 8.741939380532897e-63,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 192,
+    "state": "cccb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 1.4569898967554827e-63,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 193,
+    "state": "ccbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 3.642474741888707e-64,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 194,
+    "state": "cbcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 9.934022023332836e-65,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 195,
+    "state": "bccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 6.729498789999662e-65,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 196,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 4.312106020776483e-65,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 197,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 2.997439551027555e-65,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 198,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 7.945020496699544e-66,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 199,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 4.819110793080052e-66,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 200,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 3.5952096392819436e-66,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 201,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 2.4205371828828927e-66,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 202,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 9.77097578411443e-67,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 203,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 6.358889002360184e-67,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 204,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 1.8521035929204418e-67,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 205,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 1.6910511065795336e-67,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 206,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 1.507241203690454e-67,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 207,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.2501923162393687e-67,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 208,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 7.719560988827428e-68,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 209,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 4.766596393703683e-68,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 210,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 1.292149624799191e-68,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 211,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 5.260078118651575e-69,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 212,
+    "state": "aabb",
+    "pattern": "abbc",
+    "status": "seen",
+    "mapped_to": "abbc",
+    "probability": 2.9774027086707026e-69,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 213,
+    "state": "abbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 2.016950222002734e-69,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 214,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 1.5047088957798175e-69,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 215,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.0130713357725505e-69,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 216,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 5.808895273925175e-70,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 217,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 3.33078857449838e-70,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 218,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.909855834001365e-70,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 219,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 7.709509788629363e-71,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 220,
+    "state": "cccb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 1.2849182981048938e-71,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 221,
+    "state": "ccbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 3.2122957452622345e-72,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 222,
+    "state": "cbcc",
+    "pattern": "bcca",
+    "status": "seen",
+    "mapped_to": "bcca",
+    "probability": 1.4601344296646522e-73,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 223,
+    "state": "bcca",
+    "pattern": "ccab",
+    "status": "seen",
+    "mapped_to": "ccab",
+    "probability": 7.300672148323261e-74,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 224,
+    "state": "ccab",
+    "pattern": "cabb",
+    "status": "seen",
+    "mapped_to": "cabb",
+    "probability": 3.6503360741616305e-74,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 225,
+    "state": "cabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 3.6503360741616305e-74,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 226,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.3688760278106114e-74,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 227,
+    "state": "bbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 1.8141730489056298e-75,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 228,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 1.774734504364203e-75,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 229,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 1.5818285799767894e-75,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 230,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.3120593647869493e-75,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 231,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 8.101571378955561e-76,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 232,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 5.0024763032707535e-76,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 233,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 3.088878440272604e-76,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 234,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.907289398361096e-76,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 235,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 5.170362826882489e-77,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 236,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 2.1962603158438893e-77,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 237,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 1.9061881986569606e-77,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 238,
+    "state": "abcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 3.8901799972591033e-78,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 239,
+    "state": "bccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 5.0195870932375526e-79,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 240,
+    "state": "ccba",
+    "pattern": "cbab",
+    "status": "seen",
+    "mapped_to": "cbab",
+    "probability": 5.3781290284688064e-80,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 241,
+    "state": "cbab",
+    "pattern": "babb",
+    "status": "seen",
+    "mapped_to": "babb",
+    "probability": 1.0756258056937613e-80,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 242,
+    "state": "babb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 6.146433175392922e-81,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 243,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 2.3049124407723457e-81,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 244,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.3885014703447868e-81,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 245,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 8.364466688824018e-82,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 246,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 2.217087556073836e-82,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 247,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 1.3447908127005236e-82,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 248,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 1.0032566380464223e-82,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 249,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 6.75459914724324e-83,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 250,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 2.7266271787036932e-83,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 251,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 1.7744716559817688e-83,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 252,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 1.1370400902407452e-83,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 253,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 7.90381526142957e-84,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 254,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 4.76133449483709e-84,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 255,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 2.8682737920705365e-84,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 256,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.727875778355745e-84,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 257,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 1.0408890231058705e-84,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 258,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 6.270415801842594e-85,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 259,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 1.6620379233799648e-85,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 260,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 1.008121363361618e-85,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 261,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 7.520905409205722e-86,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 262,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 5.063579879465239e-86,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 263,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 2.9034288299686003e-86,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 264,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.6648101089269496e-86,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 265,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 9.545929523663702e-87,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 266,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 3.8534027434972743e-87,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 267,
+    "state": "cccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 7.033989134955342e-88,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 268,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 6.280347441924412e-88,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 269,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 6.090033883078218e-88,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 270,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 5.051423453405964e-88,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 271,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 3.1191018311693454e-88,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 272,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 8.455396530278345e-89,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 273,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 3.59167286241912e-89,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 274,
+    "state": "aabc",
+    "pattern": "abcb",
+    "status": "seen",
+    "mapped_to": "abcb",
+    "probability": 3.3883706249236984e-90,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 275,
+    "state": "abcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 1.6941853124618492e-90,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 276,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 7.059105468591039e-91,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 277,
+    "state": "cbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 1.7217330411197654e-91,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 278,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 1.684304061964988e-91,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 279,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 1.5012275334905328e-91,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 280,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 1.2452042332053256e-91,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 281,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 7.68876107852686e-92,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 282,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 4.7475783768012244e-92,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 283,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 1.2869941382894885e-92,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 284,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 5.466877755565968e-93,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 285,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 4.7448372972836706e-93,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 286,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 3.7765031549808806e-93,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 287,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 2.542596183551484e-93,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 288,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 1.026369101617113e-93,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 289,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 6.679544947032005e-94,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 290,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 4.280096762175848e-94,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 291,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 2.975189212731992e-94,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 292,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 7.886043696398052e-95,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 293,
+    "state": "bbbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 2.7148675020386737e-95,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 294,
+    "state": "bbcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 1.396217572477032e-95,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 295,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 5.8175732186543e-96,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 296,
+    "state": "cbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 3.54730074308189e-97,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 297,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 2.1516414343283596e-97,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 298,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 1.6051928160862365e-97,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 299,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 1.0807238761768722e-97,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 300,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 6.196811216610506e-98,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 301,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 2.5014650782647917e-98,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 302,
+    "state": "cccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 4.5661664127055715e-99,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 303,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 4.0769342970585464e-99,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 304,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 3.953390833511318e-99,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 305,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 3.279169140974504e-99,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 306,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 2.024788174396908e-99,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 307,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 2.2565410377314936e-100,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 308,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 1.7814797666301266e-100,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 309,
+    "state": "aacc",
+    "pattern": "accc",
+    "status": "seen",
+    "mapped_to": "accc",
+    "probability": 1.6330231194109494e-100,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 310,
+    "state": "accc",
+    "pattern": "ccca",
+    "status": "seen",
+    "mapped_to": "ccca",
+    "probability": 4.948554907305908e-102,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 311,
+    "state": "ccca",
+    "pattern": "ccaa",
+    "status": "seen",
+    "mapped_to": "ccaa",
+    "probability": 2.8277456613176613e-102,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 312,
+    "state": "ccaa",
+    "pattern": "caaa",
+    "status": "seen",
+    "mapped_to": "caaa",
+    "probability": 2.8277456613176613e-102,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 313,
+    "state": "caaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 2.5706778739251466e-102,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 314,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 2.8649120884105547e-103,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 315,
+    "state": "aaac",
+    "pattern": "aaca",
+    "status": "seen",
+    "mapped_to": "aaca",
+    "probability": 7.539242337922513e-105,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 316,
+    "state": "aaca",
+    "pattern": "acaa",
+    "status": "seen",
+    "mapped_to": "acaa",
+    "probability": 3.769621168961256e-105,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 317,
+    "state": "acaa",
+    "pattern": "caab",
+    "status": "seen",
+    "mapped_to": "caab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 318,
+    "state": "caab",
+    "pattern": "aaba",
+    "status": "seen",
+    "mapped_to": "aaba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 319,
+    "state": "aaba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 320,
+    "state": "abaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 321,
+    "state": "baaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 322,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 323,
+    "state": "aacc",
+    "pattern": "accb",
+    "status": "seen",
+    "mapped_to": "accb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 324,
+    "state": "accb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 325,
+    "state": "ccbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 326,
+    "state": "cbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 327,
+    "state": "bccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 328,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 329,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 330,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 331,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 332,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 333,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 334,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 335,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 336,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 337,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 338,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 339,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 340,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 341,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 342,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 343,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 344,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 345,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 346,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 347,
+    "state": "aaab",
+    "pattern": "aaba",
+    "status": "seen",
+    "mapped_to": "aaba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 348,
+    "state": "aaba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 349,
+    "state": "abaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 350,
+    "state": "baaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 351,
+    "state": "aaab",
+    "pattern": "aaba",
+    "status": "seen",
+    "mapped_to": "aaba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 352,
+    "state": "aaba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 353,
+    "state": "abaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 354,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 355,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 356,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 357,
+    "state": "aacc",
+    "pattern": "accc",
+    "status": "seen",
+    "mapped_to": "accc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 358,
+    "state": "accc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 359,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 360,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 361,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 362,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 363,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 364,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 365,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 366,
+    "state": "bbcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 367,
+    "state": "bccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 368,
+    "state": "ccbb",
+    "pattern": "cbbc",
+    "status": "seen",
+    "mapped_to": "cbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 369,
+    "state": "cbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 370,
+    "state": "bbcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 371,
+    "state": "bccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 372,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 373,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 374,
+    "state": "bbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 375,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 376,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 377,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 378,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 379,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 380,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 381,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 382,
+    "state": "bccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 383,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 384,
+    "state": "ccbb",
+    "pattern": "cbbc",
+    "status": "seen",
+    "mapped_to": "cbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 385,
+    "state": "cbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 386,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 387,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 388,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 389,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 390,
+    "state": "ccbb",
+    "pattern": "cbbc",
+    "status": "seen",
+    "mapped_to": "cbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 391,
+    "state": "cbbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 392,
+    "state": "bbcb",
+    "pattern": "bcbc",
+    "status": "seen",
+    "mapped_to": "bcbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 393,
+    "state": "bcbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 394,
+    "state": "cbcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 395,
+    "state": "bccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 396,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 397,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 398,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 399,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 400,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 401,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 402,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 403,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 404,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 405,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 406,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 407,
+    "state": "abcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 408,
+    "state": "bccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 409,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 410,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 411,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 412,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 413,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 414,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 415,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 416,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 417,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 418,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 419,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 420,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 421,
+    "state": "bbbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 422,
+    "state": "bbcb",
+    "pattern": "bcba",
+    "status": "seen",
+    "mapped_to": "bcba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 423,
+    "state": "bcba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 424,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 425,
+    "state": "baaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 426,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 427,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 428,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 429,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 430,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 431,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 432,
+    "state": "cccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 433,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 434,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 435,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 436,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 437,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 438,
+    "state": "aaab",
+    "pattern": "aaba",
+    "status": "seen",
+    "mapped_to": "aaba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 439,
+    "state": "aaba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 440,
+    "state": "abaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 441,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 442,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 443,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 444,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 445,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 446,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 447,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 448,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 449,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 450,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 451,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 452,
+    "state": "abcc",
+    "pattern": "bccb",
+    "status": "seen",
+    "mapped_to": "bccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 453,
+    "state": "bccb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 454,
+    "state": "ccbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 455,
+    "state": "cbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 456,
+    "state": "bccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 457,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 458,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 459,
+    "state": "cbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 460,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 461,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 462,
+    "state": "baaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 463,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 464,
+    "state": "aacc",
+    "pattern": "acca",
+    "status": "seen",
+    "mapped_to": "acca",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 465,
+    "state": "acca",
+    "pattern": "ccaa",
+    "status": "seen",
+    "mapped_to": "ccaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 466,
+    "state": "ccaa",
+    "pattern": "caaa",
+    "status": "seen",
+    "mapped_to": "caaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 467,
+    "state": "caaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 468,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 469,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 470,
+    "state": "aaab",
+    "pattern": "aaba",
+    "status": "seen",
+    "mapped_to": "aaba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 471,
+    "state": "aaba",
+    "pattern": "abab",
+    "status": "seen",
+    "mapped_to": "abab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 472,
+    "state": "abab",
+    "pattern": "baba",
+    "status": "seen",
+    "mapped_to": "baba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 473,
+    "state": "baba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 474,
+    "state": "abaa",
+    "pattern": "baab",
+    "status": "seen",
+    "mapped_to": "baab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 475,
+    "state": "baab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 476,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 477,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 478,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 479,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 480,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 481,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 482,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 483,
+    "state": "cccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 484,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 485,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 486,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 487,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 488,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 489,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 490,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 491,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 492,
+    "state": "bbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 493,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 494,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 495,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 496,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 497,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 498,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 499,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 500,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 501,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 502,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 503,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 504,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 505,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 506,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 507,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 508,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 509,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 510,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 511,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 512,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 513,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 514,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 515,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 516,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 517,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 518,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 519,
+    "state": "bbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 520,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 521,
+    "state": "bbaa",
+    "pattern": "baab",
+    "status": "seen",
+    "mapped_to": "baab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 522,
+    "state": "baab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 523,
+    "state": "aabb",
+    "pattern": "abbc",
+    "status": "seen",
+    "mapped_to": "abbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 524,
+    "state": "abbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 525,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 526,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 527,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 528,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 529,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 530,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 531,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 532,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 533,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 534,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 535,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 536,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 537,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 538,
+    "state": "aaab",
+    "pattern": "aaba",
+    "status": "seen",
+    "mapped_to": "aaba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 539,
+    "state": "aaba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 540,
+    "state": "abaa",
+    "pattern": "baab",
+    "status": "seen",
+    "mapped_to": "baab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 541,
+    "state": "baab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 542,
+    "state": "aabb",
+    "pattern": "abba",
+    "status": "seen",
+    "mapped_to": "abba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 543,
+    "state": "abba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 544,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 545,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 546,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 547,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 548,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 549,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 550,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 551,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 552,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 553,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 554,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 555,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 556,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 557,
+    "state": "cbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 558,
+    "state": "bbbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 559,
+    "state": "bbcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 560,
+    "state": "bcbb",
+    "pattern": "cbbc",
+    "status": "seen",
+    "mapped_to": "cbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 561,
+    "state": "cbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 562,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 563,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 564,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 565,
+    "state": "cccc",
+    "pattern": "ccca",
+    "status": "seen",
+    "mapped_to": "ccca",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 566,
+    "state": "ccca",
+    "pattern": "ccaa",
+    "status": "seen",
+    "mapped_to": "ccaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 567,
+    "state": "ccaa",
+    "pattern": "caaa",
+    "status": "seen",
+    "mapped_to": "caaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 568,
+    "state": "caaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 569,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 570,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 571,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 572,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 573,
+    "state": "aacc",
+    "pattern": "accc",
+    "status": "seen",
+    "mapped_to": "accc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 574,
+    "state": "accc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 575,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 576,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 577,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 578,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 579,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 580,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 581,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 582,
+    "state": "bbaa",
+    "pattern": "baab",
+    "status": "seen",
+    "mapped_to": "baab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 583,
+    "state": "baab",
+    "pattern": "aaba",
+    "status": "seen",
+    "mapped_to": "aaba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 584,
+    "state": "aaba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 585,
+    "state": "abaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 586,
+    "state": "baaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 587,
+    "state": "aaab",
+    "pattern": "aaba",
+    "status": "seen",
+    "mapped_to": "aaba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 588,
+    "state": "aaba",
+    "pattern": "abab",
+    "status": "seen",
+    "mapped_to": "abab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 589,
+    "state": "abab",
+    "pattern": "baba",
+    "status": "seen",
+    "mapped_to": "baba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 590,
+    "state": "baba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 591,
+    "state": "abaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 592,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 593,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 594,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 595,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 596,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 597,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 598,
+    "state": "aacc",
+    "pattern": "accc",
+    "status": "seen",
+    "mapped_to": "accc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 599,
+    "state": "accc",
+    "pattern": "ccca",
+    "status": "seen",
+    "mapped_to": "ccca",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 600,
+    "state": "ccca",
+    "pattern": "ccab",
+    "status": "seen",
+    "mapped_to": "ccab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 601,
+    "state": "ccab",
+    "pattern": "cabc",
+    "status": "seen",
+    "mapped_to": "cabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 602,
+    "state": "cabc",
+    "pattern": "abcb",
+    "status": "seen",
+    "mapped_to": "abcb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 603,
+    "state": "abcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 604,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 605,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 606,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 607,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 608,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 609,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 610,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 611,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 612,
+    "state": "cccb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 613,
+    "state": "ccbc",
+    "pattern": "cbcb",
+    "status": "seen",
+    "mapped_to": "cbcb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 614,
+    "state": "cbcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 615,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 616,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 617,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 618,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 619,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 620,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 621,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 622,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 623,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 624,
+    "state": "cccb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 625,
+    "state": "ccbc",
+    "pattern": "cbcb",
+    "status": "seen",
+    "mapped_to": "cbcb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 626,
+    "state": "cbcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 627,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 628,
+    "state": "cbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 629,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 630,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 631,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 632,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 633,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 634,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 635,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 636,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 637,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 638,
+    "state": "abbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 639,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 640,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 641,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 642,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 643,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 644,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 645,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 646,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 647,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 648,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 649,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 650,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 651,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 652,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 653,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 654,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 655,
+    "state": "bbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 656,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 657,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 658,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 659,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 660,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 661,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 662,
+    "state": "ccbb",
+    "pattern": "cbba",
+    "status": "seen",
+    "mapped_to": "cbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 663,
+    "state": "cbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 664,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 665,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 666,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 667,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 668,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 669,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 670,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 671,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 672,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 673,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 674,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 675,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 676,
+    "state": "cbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 677,
+    "state": "bbba",
+    "pattern": "bbab",
+    "status": "seen",
+    "mapped_to": "bbab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 678,
+    "state": "bbab",
+    "pattern": "babb",
+    "status": "seen",
+    "mapped_to": "babb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 679,
+    "state": "babb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 680,
+    "state": "abbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 681,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 682,
+    "state": "bbaa",
+    "pattern": "baab",
+    "status": "seen",
+    "mapped_to": "baab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 683,
+    "state": "baab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 684,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 685,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 686,
+    "state": "bbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 687,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 688,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 689,
+    "state": "baaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 690,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 691,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 692,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 693,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 694,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 695,
+    "state": "cccb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 696,
+    "state": "ccbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 697,
+    "state": "cbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 698,
+    "state": "bccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 699,
+    "state": "cccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 700,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 701,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 702,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 703,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 704,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 705,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 706,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 707,
+    "state": "abbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 708,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 709,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 710,
+    "state": "bccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 711,
+    "state": "cccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 712,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 713,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 714,
+    "state": "baaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 715,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 716,
+    "state": "aabb",
+    "pattern": "abbc",
+    "status": "seen",
+    "mapped_to": "abbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 717,
+    "state": "abbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 718,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 719,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 720,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 721,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 722,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 723,
+    "state": "cccc",
+    "pattern": "ccca",
+    "status": "seen",
+    "mapped_to": "ccca",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 724,
+    "state": "ccca",
+    "pattern": "ccaa",
+    "status": "seen",
+    "mapped_to": "ccaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 725,
+    "state": "ccaa",
+    "pattern": "caaa",
+    "status": "seen",
+    "mapped_to": "caaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 726,
+    "state": "caaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 727,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 728,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 729,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 730,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 731,
+    "state": "abbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 732,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 733,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 734,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 735,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 736,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 737,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 738,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 739,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 740,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 741,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 742,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 743,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 744,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 745,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 746,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 747,
+    "state": "cbbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 748,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 749,
+    "state": "bbcc",
+    "pattern": "bcca",
+    "status": "seen",
+    "mapped_to": "bcca",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 750,
+    "state": "bcca",
+    "pattern": "ccab",
+    "status": "seen",
+    "mapped_to": "ccab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 751,
+    "state": "ccab",
+    "pattern": "cabb",
+    "status": "seen",
+    "mapped_to": "cabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 752,
+    "state": "cabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 753,
+    "state": "abbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 754,
+    "state": "bbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 755,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 756,
+    "state": "bbaa",
+    "pattern": "baab",
+    "status": "seen",
+    "mapped_to": "baab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 757,
+    "state": "baab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 758,
+    "state": "aabb",
+    "pattern": "abba",
+    "status": "seen",
+    "mapped_to": "abba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 759,
+    "state": "abba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 760,
+    "state": "bbaa",
+    "pattern": "baab",
+    "status": "seen",
+    "mapped_to": "baab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 761,
+    "state": "baab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 762,
+    "state": "aabb",
+    "pattern": "abbb",
+    "status": "seen",
+    "mapped_to": "abbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 763,
+    "state": "abbb",
+    "pattern": "bbbc",
+    "status": "seen",
+    "mapped_to": "bbbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 764,
+    "state": "bbbc",
+    "pattern": "bbcc",
+    "status": "seen",
+    "mapped_to": "bbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 765,
+    "state": "bbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 766,
+    "state": "bccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 767,
+    "state": "cccb",
+    "pattern": "ccbc",
+    "status": "seen",
+    "mapped_to": "ccbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 768,
+    "state": "ccbc",
+    "pattern": "cbcc",
+    "status": "seen",
+    "mapped_to": "cbcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 769,
+    "state": "cbcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 770,
+    "state": "bccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 771,
+    "state": "cccb",
+    "pattern": "ccba",
+    "status": "seen",
+    "mapped_to": "ccba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 772,
+    "state": "ccba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 773,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 774,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 775,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 776,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 777,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 778,
+    "state": "aaab",
+    "pattern": "aabb",
+    "status": "seen",
+    "mapped_to": "aabb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 779,
+    "state": "aabb",
+    "pattern": "abbc",
+    "status": "seen",
+    "mapped_to": "abbc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 780,
+    "state": "abbc",
+    "pattern": "bbcb",
+    "status": "seen",
+    "mapped_to": "bbcb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 781,
+    "state": "bbcb",
+    "pattern": "bcba",
+    "status": "seen",
+    "mapped_to": "bcba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 782,
+    "state": "bcba",
+    "pattern": "cbaa",
+    "status": "seen",
+    "mapped_to": "cbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 783,
+    "state": "cbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 784,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 785,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 786,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 787,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 788,
+    "state": "aaac",
+    "pattern": "aacc",
+    "status": "seen",
+    "mapped_to": "aacc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 789,
+    "state": "aacc",
+    "pattern": "accc",
+    "status": "seen",
+    "mapped_to": "accc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 790,
+    "state": "accc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 791,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 792,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 793,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 794,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 795,
+    "state": "cbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 796,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 797,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 798,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 799,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 800,
+    "state": "aaaa",
+    "pattern": "aaab",
+    "status": "seen",
+    "mapped_to": "aaab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 801,
+    "state": "aaab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 802,
+    "state": "aabc",
+    "pattern": "abcb",
+    "status": "seen",
+    "mapped_to": "abcb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 803,
+    "state": "abcb",
+    "pattern": "bcbb",
+    "status": "seen",
+    "mapped_to": "bcbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 804,
+    "state": "bcbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 805,
+    "state": "cbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 806,
+    "state": "bbbb",
+    "pattern": "bbbb",
+    "status": "seen",
+    "mapped_to": "bbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 807,
+    "state": "bbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 808,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 809,
+    "state": "bbaa",
+    "pattern": "baab",
+    "status": "seen",
+    "mapped_to": "baab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 810,
+    "state": "baab",
+    "pattern": "aabc",
+    "status": "seen",
+    "mapped_to": "aabc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 811,
+    "state": "aabc",
+    "pattern": "abcc",
+    "status": "seen",
+    "mapped_to": "abcc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 812,
+    "state": "abcc",
+    "pattern": "bccc",
+    "status": "seen",
+    "mapped_to": "bccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 813,
+    "state": "bccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 814,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 815,
+    "state": "cccc",
+    "pattern": "cccc",
+    "status": "seen",
+    "mapped_to": "cccc",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 816,
+    "state": "cccc",
+    "pattern": "cccb",
+    "status": "seen",
+    "mapped_to": "cccb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 817,
+    "state": "cccb",
+    "pattern": "ccbb",
+    "status": "seen",
+    "mapped_to": "ccbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 818,
+    "state": "ccbb",
+    "pattern": "cbbb",
+    "status": "seen",
+    "mapped_to": "cbbb",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 819,
+    "state": "cbbb",
+    "pattern": "bbba",
+    "status": "seen",
+    "mapped_to": "bbba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 820,
+    "state": "bbba",
+    "pattern": "bbaa",
+    "status": "seen",
+    "mapped_to": "bbaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 821,
+    "state": "bbaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 822,
+    "state": "baaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 823,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 824,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 825,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 826,
+    "state": "aaaa",
+    "pattern": "aaaa",
+    "status": "seen",
+    "mapped_to": "aaaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 827,
+    "state": "aaaa",
+    "pattern": "aaac",
+    "status": "seen",
+    "mapped_to": "aaac",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 828,
+    "state": "aaac",
+    "pattern": "aaca",
+    "status": "seen",
+    "mapped_to": "aaca",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 829,
+    "state": "aaca",
+    "pattern": "acab",
+    "status": "seen",
+    "mapped_to": "acab",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 830,
+    "state": "acab",
+    "pattern": "caba",
+    "status": "seen",
+    "mapped_to": "caba",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 831,
+    "state": "caba",
+    "pattern": "abaa",
+    "status": "seen",
+    "mapped_to": "abaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  },
+  {
+    "time_step": 832,
+    "state": "abaa",
+    "pattern": "baaa",
+    "status": "seen",
+    "mapped_to": "baaa",
+    "probability": 0.0,
+    "decision": "anomaly"
+  }
+]

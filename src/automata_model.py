@@ -11,6 +11,7 @@ from typing import Iterable, Union
 
 import numpy as np
 import pandas as pd
+from scipy.special import erfinv
 
 # Ham/PCA girdisi ve PAA çıktısı için ortak sayısal tip
 SeriesInput = Union[np.ndarray, pd.Series, list[float]]
@@ -105,8 +106,8 @@ def gaussian_breakpoints(alphabet_size: int) -> np.ndarray:
             f"alphabet_size en az 2 olmalıdır; verilen: {alphabet_size}"
         )
     quantiles = np.arange(1, alphabet_size, dtype=np.float64) / alphabet_size
-    # Φ⁻¹(p) = √2 · erfinv(2p − 1)
-    return (np.sqrt(2.0) * np.erfinv(2.0 * quantiles - 1.0)).astype(np.float64)
+    # scipy.special.erfinv kullanıyoruz çünkü numpy'da erfinv fonksiyonu yoktur.
+    return (np.sqrt(2.0) * erfinv(2.0 * quantiles - 1.0)).astype(np.float64)
 
 
 class SAX:

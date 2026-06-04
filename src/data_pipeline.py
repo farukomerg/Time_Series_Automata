@@ -53,6 +53,10 @@ class DataPipeline:
         # BATADAL virgülden sonra boşluk içerebilir, bu yüzden skipinitialspace=True
         df = pd.read_csv(batadal_path, skipinitialspace=True)
         
+        # PyTorch BCELoss target'ın 0 veya 1 olmasını bekler.
+        # BATADAL'da normal veriler -999 olarak etiketlenmiş. Bunları 0 yapıyoruz.
+        df['ATT_FLAG'] = df['ATT_FLAG'].replace(-999, 0)
+        
         # Model girdisi olmayacak kolonlar
         drop_cols = ['DATETIME', 'ATT_FLAG']
         feature_cols = [c for c in df.columns if c not in drop_cols]

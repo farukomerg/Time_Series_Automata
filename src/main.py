@@ -10,6 +10,7 @@ from automata_model import apply_sax, extract_sliding_patterns, build_transition
 from explainability import ExplainabilityEngine
 from metrics import calculate_metrics, run_wilcoxon_test
 from utils import TimeSeriesDataset, add_gaussian_noise
+from visualization import plot_confusion_matrix, plot_roc_curve, plot_automata_state_diagram, plot_transition_heatmap
 
 def main():
     print("1. Konfigurasyon ve Veri Yukleme (BATADAL Ozelinde)")
@@ -62,8 +63,18 @@ def main():
             lstm_preds.extend(preds)
             
     # Sequence penceresinden eksilen ilk satirlari hizalamak icin sifir ekliyoruz
-    lstm_preds = [0] * (seq_len - 1) + lstm_preds
-    print("LSTM Metrikleri:", calculate_metrics(y_test, lstm_preds))
+    lstm_preds = [0.0] * (seq_len - 1) + lstm_preds
+    # Sklearn metrikleri hata vermesin diye 0.5 esigiyle binary hale getir
+    lstm_binary = (np.array(lstm_preds) >= 0.5).astype(int)
+    print("LSTM Metrikleri:", calculate_metrics(y_test, lstm_binary))
+    
+    # Gorsellestirme: LSTM
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    results_dir = os.path.join(project_root, "results")
+    os.makedirs(results_dir, exist_ok=True)
+    plot_confusion_matrix(y_test, lstm_binary, "LSTM", save_dir=results_dir)
+    # ROC için olasılıkları veriyoruz
+    plot_roc_curve(y_test, lstm_preds, "LSTM", save_dir=results_dir)
     
     # ---------------------------------------------------------
     print("\n3. Beyaz Kutu: Olasiliksal Otomata ve XAI")
@@ -89,6 +100,11 @@ def main():
     auto_preds = [1 if e["decision"] == "anomaly" else 0 for e in explanations]
     auto_preds = [0] * (seq_len - 1) + auto_preds
     print("Automata Metrikleri:", calculate_metrics(y_test, auto_preds))
+    
+    # Gorsellestirme: Automata
+    plot_confusion_matrix(y_test, auto_preds, "Automata", save_dir=results_dir)
+    plot_automata_state_diagram(automaton.to_dataframe(), save_dir=results_dir)
+    plot_transition_heatmap(automaton.to_dataframe(), save_dir=results_dir)
     
     # ---------------------------------------------------------
     print("\n4. Modeller Arasi Istatistiksel Analiz")
