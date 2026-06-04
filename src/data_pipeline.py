@@ -10,10 +10,18 @@ from sklearn.model_selection import GroupKFold
 class DataPipeline:
     """Veri okuma, temizleme, bölme (split) ve ön işleme (scaler, pca) işlemlerini yürütür."""
     
-    def __init__(self, config_path="src/config.yaml"):
+    def __init__(self, config_path=None):
+        if config_path is None:
+            # Otomatik olarak bu dosyanın bulunduğu src klasöründeki config.yaml'ı bul
+            config_path = os.path.join(os.path.dirname(__file__), "config.yaml")
+            
         with open(config_path, "r", encoding="utf-8") as f:
             self.config = yaml.safe_load(f)
-        self.data_dir = self.config['project']['data_dir']
+            
+        # Data klasörünü projenin ana dizinine göre ayarla
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        # config.yaml içindeki data_dir "../data/raw" şeklindedir
+        self.data_dir = os.path.normpath(os.path.join(project_root, "src", self.config['project']['data_dir']))
         
     def load_skab(self):
         """SKAB verilerini birleştirir ve özellikleri/hedefleri döner."""

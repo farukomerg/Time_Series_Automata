@@ -13,7 +13,7 @@ from utils import TimeSeriesDataset, add_gaussian_noise
 
 def main():
     print("1. Konfigurasyon ve Veri Yukleme (BATADAL Ozelinde)")
-    pipeline = DataPipeline("src/config.yaml")
+    pipeline = DataPipeline()
     config = pipeline.config
     
     df, feature_cols, target_col = pipeline.load_batadal()
@@ -77,8 +77,12 @@ def main():
     test_patterns = extract_sliding_patterns(test_symbols, window_size=seq_len)
     
     engine = ExplainabilityEngine(automaton=automaton, anomaly_threshold=0.01)
-    os.makedirs("results", exist_ok=True)
-    engine.save_json(test_patterns, "results/automata_explanation.json")
+    
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    results_dir = os.path.join(project_root, "results")
+    os.makedirs(results_dir, exist_ok=True)
+    
+    engine.save_json(test_patterns, os.path.join(results_dir, "automata_explanation.json"))
     print("JSON aciklanabilirlik raporu 'results/' klasorune kaydedildi.")
     
     explanations = engine.explain_sequence(test_patterns)
