@@ -45,7 +45,8 @@ def train_model(model, train_loader, val_loader, config, seed):
     patience = config['deep_learning']['early_stopping_patience']
     
     criterion = nn.BCELoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+    lr = config["deep_learning"]["learning_rate"]
+    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     early_stopping = EarlyStopping(patience=patience)
     
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
