@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 from data_pipeline import DataPipeline
 from dl_models import LSTMAnomalyDetector, CNN1DAnomalyDetector
 from dl_trainer import train_model, set_seed
-from automata_model import apply_sax, extract_sliding_patterns, build_transition_matrix
+from automata_model import apply_paa, apply_sax, extract_sliding_patterns, build_transition_matrix
 from explainability import ExplainabilityEngine
 from metrics import calculate_metrics, run_wilcoxon_test
 from utils import TimeSeriesDataset, add_gaussian_noise
@@ -26,6 +26,12 @@ def evaluate_model_predictions(model, test_loader, seq_len, device):
     probs = [0.0] * (seq_len - 1) + probs
     binary = (np.array(probs) >= 0.5).astype(int)
     return probs, binary
+
+def pc1_to_patterns(pc1_series, paa_window, alphabet_size, pattern_window):
+    """PC1 -> PAA -> SAX -> Sliding Window dönüşüm zinciri."""
+    paa_values = apply_paa(pc1_series, window_size=paa_window)
+    symbols = apply_sax(paa_values, alphabet_size=alphabet_size)
+    return extract_sliding_patterns(symbols, window_size=pattern_window)
 
 def run_experiment_pipeline():
     print("=== Gelişmiş Zaman Serisi Otomata ve DL Değerlendirme Sistemi ===")
@@ -89,10 +95,7 @@ def run_experiment_pipeline():
                     if scenario == "gaussian_noise":
                         X_test_dl = add_gaussian_noise(X_test_dl, std=0.1)
                         X_test_auto = add_gaussian_noise(X_test_auto, std=0.1)
-                    elif scenario == "unseen_data":
-                        # Unseen veride test örüntülerine yapay kaydırma eklenerek 'unseen' durum tetiklenir
-                        X_test_auto = X_test_auto * 1.5
-                        
+
                     y_test = df.loc[test_idx, target_col].values
                     
                     # Dinamik Klasörleme Mimarisi (Windows Uyumlu Dosya İsimleri ile)
@@ -130,15 +133,22 @@ def run_experiment_pipeline():
                     cnn_model = train_model(cnn_model, train_loader, val_loader, config, seed)
                     cnn_probs, cnn_binary = evaluate_model_predictions(cnn_model, test_loader, seq_len, device)
                     
-                    # 3. MODEL: Beyaz Kutu Olasılıksal Otomata Yapısı (Senin Modülün)
-                    train_symbols = apply_sax(auto_data['train'], alphabet_size=alphabet_size)
-                    train_patterns = extract_sliding_patterns(train_symbols, window_size=seq_len)
+                    # 3. MODEL: Olasılıksal Otomata (PC1 -> PAA -> SAX -> Sliding Window)
+                    train_patterns = pc1_to_patterns(
+                        auto_data['train'], seq_len, alphabet_size, seq_len
+                    )
                     automaton = build_transition_matrix([train_patterns])
-                    
-                    test_symbols = apply_sax(X_test_auto, alphabet_size=alphabet_size)
-                    test_patterns = extract_sliding_patterns(test_symbols, window_size=seq_len)
-                    
-                    engine = ExplainabilityEngine(automaton=automaton, anomaly_threshold=0.01)
+                    training_vocabulary = set(train_patterns)
+
+                    test_patterns = pc1_to_patterns(
+                        X_test_auto, seq_len, alphabet_size, seq_len
+                    )
+
+                    engine = ExplainabilityEngine(
+                        automaton=automaton,
+                        training_vocabulary=training_vocabulary,
+                        anomaly_threshold=0.01,
+                    )
                     engine.save_json(test_patterns, os.path.join(current_results_dir, "automata_explanation.json"))
                     
                     explanations = engine.explain_sequence(test_patterns)

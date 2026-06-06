@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from typing import Any
 
-from automata_model import ProbabilisticAutomaton
+from automata_model import ProbabilisticAutomaton, nearest_pattern
 
 ExplanationRecord = dict[str, Any]
 
@@ -14,15 +14,18 @@ class ExplainabilityEngine:
     def __init__(
         self,
         automaton: ProbabilisticAutomaton,
+        training_vocabulary: set[str],
         anomaly_threshold: float,
     ) -> None:
         self.automaton = automaton
+        self.training_vocabulary = training_vocabulary
         self.anomaly_threshold = anomaly_threshold
 
-    def _status_and_mapping(self, pattern: str) -> tuple[str, str]:
-        if pattern in self.automaton.states:
-            return "seen", pattern
-        return "unseen", self.automaton.resolve_state(pattern)
+    def _status_and_mapping(self, pattern: str) -> tuple[str, str, int]:
+        if pattern in self.training_vocabulary:
+            return "seen", pattern, 0
+        mapped, distance = nearest_pattern(pattern, self.training_vocabulary)
+        return "unseen", mapped, distance
 
     def explain_step(
         self,
@@ -31,12 +34,12 @@ class ExplainabilityEngine:
         pattern: str,
         path_probability: float,
     ) -> ExplanationRecord:
-        status, mapped_to = self._status_and_mapping(pattern)
+        status, mapped_to, distance = self._status_and_mapping(pattern)
         state = previous_state if previous_state is not None else mapped_to
         decision = (
             "anomaly" if path_probability < self.anomaly_threshold else "normal"
         )
-        return {
+        record = {
             "time_step": time_step,
             "state": state,
             "pattern": pattern,
@@ -45,6 +48,9 @@ class ExplainabilityEngine:
             "probability": float(path_probability),
             "decision": decision,
         }
+        if status == "unseen":
+            record["distance"] = distance
+        return record
 
     def explain_sequence(self, patterns: list[str]) -> list[ExplanationRecord]:
         records: list[ExplanationRecord] = []
@@ -52,7 +58,7 @@ class ExplainabilityEngine:
         prev_mapped: str | None = None
 
         for t, pattern in enumerate(patterns):
-            mapped = self.automaton.resolve_state(pattern)
+            _, mapped, _ = self._status_and_mapping(pattern)
             if prev_mapped is not None:
                 path_prob *= self.automaton.get_transition_probability(
                     prev_mapped, mapped
