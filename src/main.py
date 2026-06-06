@@ -1,5 +1,6 @@
 import os
 import json
+import csv
 import torch
 import numpy as np
 from torch.utils.data import DataLoader
@@ -21,6 +22,7 @@ from visualization import (
     plot_roc_curve,
     plot_automata_state_diagram,
     plot_transition_heatmap,
+    plot_parameter_sensitivity,
 )
 
 
@@ -37,7 +39,6 @@ def evaluate_model_predictions(model, test_loader, seq_len, device, threshold):
 
 
 def pc1_to_patterns(pc1_series, paa_window, alphabet_size, pattern_window):
-    """PC1 -> PAA -> SAX -> Sliding Window"""
     paa_values = apply_paa(pc1_series, window_size=paa_window)
     symbols = apply_sax(paa_values, alphabet_size=alphabet_size)
     return extract_sliding_patterns(symbols, window_size=pattern_window)
@@ -59,6 +60,48 @@ def _log_line(log_path, message):
         f.write(message + "\n")
 
 
+def _append_metric_row(
+    rows,
+    dataset,
+    scenario,
+    window_size,
+    alphabet_size,
+    seed,
+    split,
+    model,
+    metrics,
+    state_count,
+    transition_density,
+):
+    rows.append(
+        {
+            "dataset": dataset,
+            "scenario": scenario,
+            "window_size": window_size,
+            "alphabet_size": alphabet_size,
+            "seed": seed,
+            "split": split,
+            "model": model,
+            "accuracy": metrics["accuracy"],
+            "precision": metrics["precision"],
+            "recall": metrics["recall"],
+            "f1": metrics["f1"],
+            "state_count": state_count,
+            "transition_density": transition_density,
+        }
+    )
+
+
+def _save_experiment_logs(rows, path):
+    if not rows:
+        return
+    fieldnames = list(rows[0].keys())
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def run_experiment_pipeline():
     print("=== Zaman Serisi Otomata + DL Deney Sistemi ===")
     pipeline = DataPipeline()
@@ -76,11 +119,15 @@ def run_experiment_pipeline():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    log_path = os.path.join(project_root, "results", "experiment_log.txt")
-    os.makedirs(os.path.dirname(log_path), exist_ok=True)
+    results_root = os.path.join(project_root, "results")
+    plots_dir = os.path.join(results_root, "plots")
+    log_path = os.path.join(results_root, "experiment_log.txt")
+    logs_csv_path = os.path.join(results_root, "experiment_logs.csv")
+    os.makedirs(results_root, exist_ok=True)
     with open(log_path, "w", encoding="utf-8") as f:
         f.write("=== Deney Logu ===\n")
 
+    experiment_rows = []
     param_analysis_records = []
     datasets = ["BATADAL", "SKAB"]
 
@@ -109,7 +156,8 @@ def run_experiment_pipeline():
 
                     for seed in config["experiment"]["random_seeds"]:
                         set_seed(seed)
-                        seed_lstm, seed_cnn, seed_auto = [], [], []
+                        seed_lstm_f1, seed_cnn_f1, seed_auto_f1 = [], [], []
+                        seed_lstm_all, seed_cnn_all, seed_auto_all = [], [], []
 
                         for split_idx, split_info in enumerate(splits):
                             if len(split_info) == 3:
@@ -143,8 +191,7 @@ def run_experiment_pipeline():
                                 f"fold_{split_idx}" if dataset_name == "SKAB" else "full"
                             )
                             results_dir = os.path.join(
-                                project_root,
-                                "results",
+                                results_root,
                                 dataset_name,
                                 scenario,
                                 f"w{window_size}_a{alphabet_size}",
@@ -245,16 +292,32 @@ def run_experiment_pipeline():
                                 y_test, cnn_binary, threshold=clf_threshold
                             )
                             auto_m = calculate_metrics(y_test, auto_preds)
-                            seed_lstm.append(lstm_m["f1"])
-                            seed_cnn.append(cnn_m["f1"])
-                            seed_auto.append(auto_m["f1"])
 
-                            w_sample = run_wilcoxon_test(lstm_binary, auto_preds, y_test)
-                            _log_line(
-                                log_path,
-                                f"[Wilcoxon sample] {tag} seed={seed} "
-                                f"p={w_sample['p_value']:.6e}",
-                            )
+                            for model_name, metrics in [
+                                ("LSTM", lstm_m),
+                                ("CNN", cnn_m),
+                                ("Automata", auto_m),
+                            ]:
+                                _append_metric_row(
+                                    experiment_rows,
+                                    dataset_name,
+                                    scenario,
+                                    window_size,
+                                    alphabet_size,
+                                    seed,
+                                    split_label,
+                                    model_name,
+                                    metrics,
+                                    state_count,
+                                    transition_density,
+                                )
+
+                            seed_lstm_f1.append(lstm_m["f1"])
+                            seed_cnn_f1.append(cnn_m["f1"])
+                            seed_auto_f1.append(auto_m["f1"])
+                            seed_lstm_all.append(lstm_m)
+                            seed_cnn_all.append(cnn_m)
+                            seed_auto_all.append(auto_m)
 
                             lbl = f"{dataset_name}-{scenario}-w{window_size}-s{seed}"
                             plot_confusion_matrix(
@@ -275,9 +338,18 @@ def run_experiment_pipeline():
                                 automaton.to_dataframe(), save_dir=results_dir
                             )
 
-                        lstm_f1_scores.append(float(np.mean(seed_lstm)))
-                        cnn_f1_scores.append(float(np.mean(seed_cnn)))
-                        auto_f1_scores.append(float(np.mean(seed_auto)))
+                        if dataset_name == "SKAB":
+                            _log_line(
+                                log_path,
+                                f"[SKAB fold ort.] {tag} seed={seed} | "
+                                f"LSTM F1: {np.mean(seed_lstm_f1):.4f} ± {np.std(seed_lstm_f1):.4f} | "
+                                f"CNN F1: {np.mean(seed_cnn_f1):.4f} ± {np.std(seed_cnn_f1):.4f} | "
+                                f"Otomata F1: {np.mean(seed_auto_f1):.4f} ± {np.std(seed_auto_f1):.4f}",
+                            )
+
+                        lstm_f1_scores.append(float(np.mean(seed_lstm_f1)))
+                        cnn_f1_scores.append(float(np.mean(seed_cnn_f1)))
+                        auto_f1_scores.append(float(np.mean(seed_auto_f1)))
 
                     summary = (
                         f">>> RAPOR ({tag}) <<<\n"
@@ -298,10 +370,17 @@ def run_experiment_pipeline():
                         f"significant={w_cnn['significant']}",
                     )
 
-    analysis_path = os.path.join(project_root, "results", "param_analysis.json")
+    _save_experiment_logs(experiment_rows, logs_csv_path)
+    with open(os.path.join(results_root, "experiment_logs.json"), "w", encoding="utf-8") as f:
+        json.dump(experiment_rows, f, indent=2, ensure_ascii=False)
+
+    analysis_path = os.path.join(results_root, "param_analysis.json")
     with open(analysis_path, "w", encoding="utf-8") as f:
         json.dump(param_analysis_records, f, indent=2, ensure_ascii=False)
-    print(f"\nParametre analizi: {analysis_path}")
+
+    plot_parameter_sensitivity(experiment_rows, param_analysis_records, plots_dir)
+    print(f"\nLoglar: {logs_csv_path}")
+    print(f"Grafikler: {plots_dir}")
 
 
 if __name__ == "__main__":
