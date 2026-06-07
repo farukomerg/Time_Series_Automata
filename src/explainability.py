@@ -1,4 +1,4 @@
-"""Olasılıksal otomata kararlarını JSON açıklama çıktısına dönüştürür."""
+﻿"""Olas─▒l─▒ksal otomata kararlar─▒n─▒ JSON a├ğ─▒klama ├ğ─▒kt─▒s─▒na d├Ân├╝┼şt├╝r├╝r."""
 
 from __future__ import annotations
 
@@ -32,13 +32,8 @@ class ExplainabilityEngine:
     def _outbound_transitions(self, from_state: str) -> list[str]:
         probs = self.automaton.transition_probabilities.get(from_state, {})
         return [
-<<<<<<< HEAD
-            f"{from_state} -> {dst}: {p:.2f}"
-            for dst, p in sorted(probs.items())
-=======
             f"{from_state} -> {dst}: {self.automaton.get_transition_probability(from_state, dst):.2f}"
             for dst, _ in sorted(probs.items())
->>>>>>> c95c420aef4ed2407790f8f0e0e83a6cfcd7ce9f
         ]
 
     def explain_step(
@@ -73,24 +68,6 @@ class ExplainabilityEngine:
 
     def explain_sequence(self, patterns: list[str]) -> list[ExplanationRecord]:
         records: list[ExplanationRecord] = []
-<<<<<<< HEAD
-        path_prob = 1.0
-        prev_mapped: str | None = None
-        path_transitions: list[str] = []
-
-        for t, pattern in enumerate(patterns):
-            _, mapped, _ = self._status_and_mapping(pattern)
-            if prev_mapped is not None:
-                step_p = self.automaton.get_transition_probability(prev_mapped, mapped)
-                path_prob *= step_p
-                path_transitions.append(
-                    f"{prev_mapped} -> {mapped}: {step_p:.2f}"
-                )
-
-            records.append(
-                self.explain_step(
-                    t, prev_mapped, pattern, path_prob, list(path_transitions)
-=======
         mapped_states: list[str] = []
         step_probabilities: list[float] = []
 
@@ -126,7 +103,6 @@ class ExplainabilityEngine:
                     pattern,
                     path_prob,
                     path_transitions,
->>>>>>> c95c420aef4ed2407790f8f0e0e83a6cfcd7ce9f
                 )
             )
 
