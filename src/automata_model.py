@@ -237,11 +237,12 @@ def extract_sliding_patterns(
 class ProbabilisticAutomaton:
     # pattern = state; ardışık çiftlerden P(Si->Sj) frekansla
 
-    def __init__(self) -> None:
+    def __init__(self, smoothing_k: float = 0.1) -> None:
         self.transition_counts: TransitionCounts = {}
         self.transition_probabilities: TransitionProbabilities = {}
         self.outbound_totals: dict[State, int] = {}
         self.states: set[State] = set()
+        self.smoothing_k = smoothing_k
 
     def fit_sequence(self, patterns: list[str]) -> ProbabilisticAutomaton:
         return self.fit_sequences([patterns])
@@ -291,21 +292,34 @@ class ProbabilisticAutomaton:
     def get_transition_probability(self, from_state: State, to_state: State) -> float:
         src = self.resolve_state(from_state)
         dst = self.resolve_state(to_state)
-        return self.transition_probabilities.get(src, {}).get(dst, 0.0)
+        
+        if src not in self.states:
+            return 1.0 / len(self.states) if self.states else 0.0
+            
+        k = self.smoothing_k
+        if k > 0:
+            count = self.transition_counts.get(src, {}).get(dst, 0)
+            total = self.outbound_totals.get(src, 0)
+            num_states = len(self.states)
+            return (count + k) / (total + k * num_states)
+        else:
+            return self.transition_probabilities.get(src, {}).get(dst, 0.0)
 
     def to_dataframe(self) -> pd.DataFrame:
         ordered = sorted(self.states)
         if not ordered:
             return pd.DataFrame()
         df = pd.DataFrame(0.0, index=ordered, columns=ordered)
-        for src, targets in self.transition_probabilities.items():
-            for dst, p in targets.items():
-                df.loc[src, dst] = p
+        for src in ordered:
+            for dst in ordered:
+                df.loc[src, dst] = self.get_transition_probability(src, dst)
         return df
 
 
-def build_transition_matrix(pattern_sequences: Iterable[list[str]]) -> ProbabilisticAutomaton:
-    return ProbabilisticAutomaton().fit_sequences(pattern_sequences)
+def build_transition_matrix(
+    pattern_sequences: Iterable[list[str]], smoothing_k: float = 0.1
+) -> ProbabilisticAutomaton:
+    return ProbabilisticAutomaton(smoothing_k=smoothing_k).fit_sequences(pattern_sequences)
 
 
 def levenshtein_distance(a: str, b: str) -> int:

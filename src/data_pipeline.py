@@ -22,21 +22,7 @@ class DataPipeline:
         project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         # config.yaml içindeki data_dir "../data/raw" şeklindedir
         self.data_dir = os.path.normpath(os.path.join(project_root, "src", self.config['project']['data_dir']))
-
-    def _clean_missing_values(self, df, exclude_cols=None):
-        """CSV okuma sonrası eksik verileri ffill/bfill ile doldurur, kalanları atar."""
-        exclude_cols = set(exclude_cols or [])
-        numeric_cols = [
-            c for c in df.columns
-            if c not in exclude_cols and pd.api.types.is_numeric_dtype(df[c])
-        ]
-        if not numeric_cols:
-            return df
-        cleaned = df.copy()
-        cleaned[numeric_cols] = cleaned[numeric_cols].ffill().bfill()
-        cleaned = cleaned.dropna(subset=numeric_cols)
-        return cleaned.reset_index(drop=True)
-
+        
     def load_skab(self):
         """SKAB verilerini birleştirir ve özellikleri/hedefleri döner."""
         skab_dir = os.path.join(self.data_dir, "SKAB")
@@ -51,8 +37,8 @@ class DataPipeline:
                 all_dfs.append(df)
                 
         full_df = pd.concat(all_dfs, ignore_index=True)
+        # Zaman sıralamasını garanti altına alalım
         full_df = full_df.sort_values(by=['source_group', 'source_file', 'datetime']).reset_index(drop=True)
-        full_df = self._clean_missing_values(full_df, exclude_cols=['datetime', 'source_group', 'source_file'])
         
         # Model girdisi olmayacak kolonlar
         drop_cols = ['datetime', 'changepoint', 'source_group', 'source_file', 'anomaly']
@@ -66,8 +52,7 @@ class DataPipeline:
         batadal_path = os.path.join(self.data_dir, "BATADAL_dataset04.csv")
         # BATADAL virgülden sonra boşluk içerebilir, bu yüzden skipinitialspace=True
         df = pd.read_csv(batadal_path, skipinitialspace=True)
-        df = self._clean_missing_values(df, exclude_cols=['DATETIME'])
-
+        
         # PyTorch BCELoss target'ın 0 veya 1 olmasını bekler.
         # BATADAL'da normal veriler -999 olarak etiketlenmiş. Bunları 0 yapıyoruz.
         df['ATT_FLAG'] = df['ATT_FLAG'].replace(-999, 0)

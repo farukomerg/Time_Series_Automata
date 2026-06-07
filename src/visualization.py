@@ -89,3 +89,68 @@ def plot_transition_heatmap(transition_matrix_df: pd.DataFrame, save_dir="result
     os.makedirs(save_dir, exist_ok=True)
     plt.savefig(os.path.join(save_dir, "automata_transition_heatmap.png"))
     plt.close()
+
+
+def plot_parameter_sensitivity(experiment_logs, param_records, save_dir="results/plots"):
+    """Window/Alphabet size etkisini F1 ve state sayısı üzerinde çizer."""
+    os.makedirs(save_dir, exist_ok=True)
+    if not experiment_logs:
+        return
+
+    df = pd.DataFrame(experiment_logs)
+    pdf = pd.DataFrame(param_records) if param_records else pd.DataFrame()
+
+    for dataset in df["dataset"].unique():
+        ddf = df[df["dataset"] == dataset]
+
+        for scenario in ddf["scenario"].unique():
+            sdf = ddf[ddf["scenario"] == scenario]
+            tag = f"{dataset}_{scenario}"
+
+            fig, ax = plt.subplots(figsize=(8, 5))
+            for model in sdf["model"].unique():
+                mdf = sdf[sdf["model"] == model]
+                agg = mdf.groupby("window_size")["f1"].mean().reset_index()
+                ax.plot(agg["window_size"], agg["f1"], marker="o", label=model)
+            ax.set_xlabel("Window Size")
+            ax.set_ylabel("F1 Score")
+            ax.set_title(f"Parametre Duyarliligi - Window Size ({tag})")
+            ax.legend()
+            ax.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig(os.path.join(save_dir, f"{tag}_f1_vs_window_size.png"))
+            plt.close()
+
+            fig, ax = plt.subplots(figsize=(8, 5))
+            for model in sdf["model"].unique():
+                mdf = sdf[sdf["model"] == model]
+                agg = mdf.groupby("alphabet_size")["f1"].mean().reset_index()
+                ax.plot(agg["alphabet_size"], agg["f1"], marker="s", label=model)
+            ax.set_xlabel("Alphabet Size")
+            ax.set_ylabel("F1 Score")
+            ax.set_title(f"Parametre Duyarliligi - Alphabet Size ({tag})")
+            ax.legend()
+            ax.grid(True, alpha=0.3)
+            plt.tight_layout()
+            plt.savefig(os.path.join(save_dir, f"{tag}_f1_vs_alphabet_size.png"))
+            plt.close()
+
+            if not pdf.empty:
+                psub = pdf[(pdf["dataset"] == dataset) & (pdf["scenario"] == scenario)]
+                if not psub.empty:
+                    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+                    ws = psub.groupby("window_size")["state_count"].mean()
+                    axes[0].bar(ws.index.astype(str), ws.values, color="steelblue")
+                    axes[0].set_title("State Sayisi vs Window Size")
+                    axes[0].set_xlabel("Window Size")
+                    axes[0].set_ylabel("Ortalama State Sayisi")
+
+                    als = psub.groupby("alphabet_size")["state_count"].mean()
+                    axes[1].bar(als.index.astype(str), als.values, color="coral")
+                    axes[1].set_title("State Sayisi vs Alphabet Size")
+                    axes[1].set_xlabel("Alphabet Size")
+                    axes[1].set_ylabel("Ortalama State Sayisi")
+                    plt.suptitle(f"Otomata State Analizi ({tag})")
+                    plt.tight_layout()
+                    plt.savefig(os.path.join(save_dir, f"{tag}_state_count_sensitivity.png"))
+                    plt.close()

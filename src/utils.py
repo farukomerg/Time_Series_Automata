@@ -19,7 +19,7 @@ class TimeSeriesDataset(Dataset):
         
         return torch.tensor(x_seq, dtype=torch.float32), torch.tensor(y_val, dtype=torch.float32)
 
-def add_gaussian_noise(X, mean=0.0, std=0.1):
+def add_gaussian_noise(X, mean, std):
     """
     Rubric kuralı: Sistemin dayanıklılığını test etmek için 
     veriye Gauss gürültüsü (Gaussian Noise) ekler.
