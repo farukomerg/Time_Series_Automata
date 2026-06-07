@@ -16,10 +16,12 @@ class ExplainabilityEngine:
         automaton: ProbabilisticAutomaton,
         training_vocabulary: set[str],
         anomaly_threshold: float,
+        window_size: int = 4,
     ) -> None:
         self.automaton = automaton
         self.training_vocabulary = training_vocabulary
         self.anomaly_threshold = anomaly_threshold
+        self.window_size = window_size
 
     def _status_and_mapping(self, pattern: str) -> tuple[str, str, int]:
         if pattern in self.training_vocabulary:
@@ -30,8 +32,13 @@ class ExplainabilityEngine:
     def _outbound_transitions(self, from_state: str) -> list[str]:
         probs = self.automaton.transition_probabilities.get(from_state, {})
         return [
+<<<<<<< HEAD
             f"{from_state} -> {dst}: {p:.2f}"
             for dst, p in sorted(probs.items())
+=======
+            f"{from_state} -> {dst}: {self.automaton.get_transition_probability(from_state, dst):.2f}"
+            for dst, _ in sorted(probs.items())
+>>>>>>> c95c420aef4ed2407790f8f0e0e83a6cfcd7ce9f
         ]
 
     def explain_step(
@@ -66,6 +73,7 @@ class ExplainabilityEngine:
 
     def explain_sequence(self, patterns: list[str]) -> list[ExplanationRecord]:
         records: list[ExplanationRecord] = []
+<<<<<<< HEAD
         path_prob = 1.0
         prev_mapped: str | None = None
         path_transitions: list[str] = []
@@ -82,9 +90,45 @@ class ExplainabilityEngine:
             records.append(
                 self.explain_step(
                     t, prev_mapped, pattern, path_prob, list(path_transitions)
+=======
+        mapped_states: list[str] = []
+        step_probabilities: list[float] = []
+
+        for pattern in patterns:
+            _, mapped, _ = self._status_and_mapping(pattern)
+            mapped_states.append(mapped)
+
+        for t, pattern in enumerate(patterns):
+            if t > 0:
+                prev_mapped = mapped_states[t - 1]
+                curr_mapped = mapped_states[t]
+                step_p = self.automaton.get_transition_probability(prev_mapped, curr_mapped)
+                step_probabilities.append(step_p)
+
+            start_trans_idx = max(0, t - self.window_size + 1)
+            active_transitions = step_probabilities[start_trans_idx : t]
+
+            path_prob = 1.0
+            for p in active_transitions:
+                path_prob *= p
+
+            path_transitions: list[str] = []
+            for i in range(start_trans_idx, t):
+                prev = mapped_states[i]
+                curr = mapped_states[i + 1]
+                p_val = step_probabilities[i]
+                path_transitions.append(f"{prev} -> {curr}: {p_val:.2f}")
+
+            records.append(
+                self.explain_step(
+                    t,
+                    mapped_states[t - 1] if t > 0 else None,
+                    pattern,
+                    path_prob,
+                    path_transitions,
+>>>>>>> c95c420aef4ed2407790f8f0e0e83a6cfcd7ce9f
                 )
             )
-            prev_mapped = mapped
 
         return records
 

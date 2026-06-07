@@ -1,34 +1,48 @@
-# config.yaml - Merkezi Konfigürasyon Dosyası
-# Proje kuralları gereği (Madde 1) koda gömülü sabit (hard-coded) değer kullanılmayacaktır.
-
 project:
   name: "Time_Series_Automata"
+  #veri setlerinin aranacağı yol
   data_dir: "../data/raw"
 
 experiment:
   random_seeds: [42, 123, 2026, 7, 999]
+  #model dayanıklılığını ölçek için senaryolarımız
   scenarios:
     - "original"
     - "gaussian_noise"
     - "unseen_data"
   gaussian_noise:
+<<<<<<< HEAD
     mean: 0.0
     std: 0.1
   skab_train_val_split: 0.8
+=======
+  #elektriksel gürültü sebebiyle üretilen hatalı sinyalleri simüle eden 2 değer.
+    mean: 0.0
+    std: 0.1
+
+  #skab veri vetini kaç oranında bölmeli
+  skab_train_val_split: 0.8
+  #test verisinin genliğini $1.5$ katsayısıyla çarpar (yani %50 büyütür).
+>>>>>>> c95c420aef4ed2407790f8f0e0e83a6cfcd7ce9f
   unseen_data_scale: 1.5
 
 deep_learning:
   epoch_limit: 50
   batch_size: 32
   early_stopping_patience: 5
+<<<<<<< HEAD
   learning_rate: 0.001
+=======
+  learning_rate: 0.0005
+  # $0.0$ ile $1.0$ arasındaki anomali olasılık skorunu ikili koda (binary) çevirir. 0 mı 1 mi çıksın?
+>>>>>>> c95c420aef4ed2407790f8f0e0e83a6cfcd7ce9f
   classification_threshold: 0.5
   lstm:
-    hidden_size: 64
-    num_layers: 2
-    dropout: 0.2
+    hidden_size: 32
+    num_layers: 1
+    dropout: 0.0
   cnn_1d:
-    filters: 64
+    filters: 32
     kernel_size: 3
 
 automata:
@@ -38,3 +52,7 @@ automata:
   default_alphabet_size: 3
   anomaly_threshold: 0.01
   paa_window_size: 4
+<<<<<<< HEAD
+=======
+  smoothing_k: 0.1
+>>>>>>> c95c420aef4ed2407790f8f0e0e83a6cfcd7ce9f
