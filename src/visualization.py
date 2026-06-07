@@ -8,15 +8,21 @@ import pandas as pd
 def plot_confusion_matrix(y_true, y_pred, model_name, save_dir="results"):
     """Confusion Matrix (Karmaşıklık Matrisi) çizer."""
     cm = confusion_matrix(y_true, y_pred)
-    plt.figure(figsize=(6, 5))
-    sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", cbar=False)
-    plt.title(f"Confusion Matrix - {model_name}")
-    plt.xlabel("Tahmin Edilen (Predicted)")
-    plt.ylabel("Gerçek (Actual)")
+    plt.figure(figsize=(6, 5), facecolor='#F8F9FA')
+    ax = plt.gca()
+    ax.set_facecolor('#F8F9FA')
+    sns.heatmap(cm, annot=True, fmt="d", cmap="mako", cbar=False,
+                linewidths=1, linecolor='#F8F9FA',
+                annot_kws={"size": 12, "weight": "bold"})
+    plt.title(f"Confusion Matrix - {model_name}", fontsize=14, pad=15, color='#2C3E50', weight='bold')
+    plt.xlabel("Tahmin Edilen (Predicted)", fontsize=11, color='#34495E', labelpad=10)
+    plt.ylabel("Gerçek (Actual)", fontsize=11, color='#34495E', labelpad=10)
+    plt.xticks(color='#7F8C8D')
+    plt.yticks(color='#7F8C8D')
     plt.tight_layout()
     
     os.makedirs(save_dir, exist_ok=True)
-    plt.savefig(os.path.join(save_dir, f"{model_name}_confusion_matrix.png"))
+    plt.savefig(os.path.join(save_dir, f"{model_name}_confusion_matrix.png"), dpi=300, bbox_inches='tight', facecolor='#F8F9FA')
     plt.close()
 
 def plot_roc_curve(y_true, y_probs, model_name, save_dir="results"):
@@ -24,70 +30,78 @@ def plot_roc_curve(y_true, y_probs, model_name, save_dir="results"):
     fpr, tpr, _ = roc_curve(y_true, y_probs)
     roc_auc = auc(fpr, tpr)
     
-    plt.figure(figsize=(6, 5))
-    plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC Area = {roc_auc:.2f}')
-    plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title(f'ROC Eğrisi - {model_name}')
-    plt.legend(loc="lower right")
-    plt.tight_layout()
+    plt.figure(figsize=(6, 5), facecolor='#F8F9FA')
+    ax = plt.gca()
+    ax.set_facecolor('#FFFFFF')
+    ax.grid(color='#E5E7EB', linestyle='--', linewidth=1, alpha=0.7)
     
+    plt.plot(fpr, tpr, color='#E74C3C', lw=2.5, label=f'AUC = {roc_auc:.3f}')
+    plt.plot([0, 1], [0, 1], color='#34495E', lw=2, linestyle=':')
+    plt.xlim([-0.02, 1.02])
+    plt.ylim([-0.02, 1.05])
+    plt.xlabel('False Positive Rate', fontsize=11, color='#34495E', weight='500')
+    plt.ylabel('True Positive Rate', fontsize=11, color='#34495E', weight='500')
+    plt.title(f'ROC Eğrisi - {model_name}', fontsize=14, pad=15, color='#2C3E50', weight='bold')
+    plt.legend(loc="lower right", frameon=True, facecolor='#FFFFFF', edgecolor='#BDC3C7')
+    
+    for spine in ax.spines.values():
+        spine.set_color('#BDC3C7')
+        
+    plt.tight_layout()
     os.makedirs(save_dir, exist_ok=True)
-    plt.savefig(os.path.join(save_dir, f"{model_name}_roc_curve.png"))
+    plt.savefig(os.path.join(save_dir, f"{model_name}_roc_curve.png"), dpi=300, bbox_inches='tight', facecolor='#F8F9FA')
     plt.close()
 
 def plot_automata_state_diagram(transition_matrix_df: pd.DataFrame, save_dir="results"):
-    """
-    Otomata modelinin durum geçişlerini NetworkX kullanarak görselleştirir.
-    Rubric'te beklenen Durum Geçiş (State Transition) grafiğini PNG olarak çıkarır.
-    """
+    """Otomata modelinin durum geçişlerini NetworkX kullanarak görselleştirir."""
     G = nx.DiGraph()
-    
-    # DataFrame üzerinden matris değerleriyle node ve edge oluştur
     for src_state in transition_matrix_df.index:
         for dst_state in transition_matrix_df.columns:
             prob = transition_matrix_df.loc[src_state, dst_state]
-            if prob > 0.0:  # Sadece sıfırdan büyük geçişleri çiz
+            if prob > 0.0:
                 G.add_edge(src_state, dst_state, weight=prob)
                 
-    plt.figure(figsize=(10, 8))
-    # Düğümleri yaylı (spring) yerleşim planıyla dağıt
-    pos = nx.spring_layout(G, k=0.8, iterations=50)
+    plt.figure(figsize=(10, 8), facecolor='#F8F9FA')
+    pos = nx.spring_layout(G, k=0.9, iterations=80, seed=42)
     
-    # Kenar kalınlıklarını olasılıklara bağla
     edges = G.edges()
-    weights = [G[u][v]['weight'] * 4 for u, v in edges]
+    weights = [G[u][v]['weight'] * 6 for u, v in edges]
     
-    nx.draw_networkx_nodes(G, pos, node_size=1800, node_color='lightblue', edgecolors='gray')
-    nx.draw_networkx_labels(G, pos, font_size=10, font_weight="bold")
-    nx.draw_networkx_edges(G, pos, edgelist=edges, width=weights, arrowstyle="-|>", arrowsize=20, edge_color="gray")
+    nx.draw_networkx_nodes(G, pos, node_size=2500, node_color='#3498DB', 
+                           edgecolors='#2980B9', linewidths=2, alpha=0.9)
+    nx.draw_networkx_labels(G, pos, font_size=11, font_weight="bold", font_color='white')
+    nx.draw_networkx_edges(G, pos, edgelist=edges, width=weights, 
+                           arrowstyle="-|>", arrowsize=22, edge_color="#95A5A6", connectionstyle='arc3,rad=0.15')
     
-    # Olasılık değerlerini okların üzerine yaz
     edge_labels = {(u, v): f"{G[u][v]['weight']:.2f}" for u, v in edges}
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=8)
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=9, 
+                                 bbox=dict(facecolor='#FFFFFF', edgecolor='none', alpha=0.7))
     
-    plt.title("Probabilistic Automata - State Transition Diagram", fontsize=14)
+    plt.title("Probabilistic Automata - State Transitions", fontsize=16, pad=20, color='#2C3E50', weight='bold')
     plt.axis("off")
     plt.tight_layout()
     
     os.makedirs(save_dir, exist_ok=True)
-    plt.savefig(os.path.join(save_dir, "automata_state_diagram.png"))
+    plt.savefig(os.path.join(save_dir, "automata_state_diagram.png"), dpi=300, bbox_inches='tight', facecolor='#F8F9FA')
     plt.close()
 
 def plot_transition_heatmap(transition_matrix_df: pd.DataFrame, save_dir="results"):
     """Otomata geçiş olasılıklarının Isı Haritasını (Heatmap) çizer."""
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(transition_matrix_df, annot=True, fmt=".2f", cmap="YlGnBu")
-    plt.title("Otomata Geçiş Olasılıkları Isı Haritası")
-    plt.xlabel("Hedef Durum (To State)")
-    plt.ylabel("Kaynak Durum (From State)")
+    plt.figure(figsize=(8, 6), facecolor='#F8F9FA')
+    ax = plt.gca()
+    ax.set_facecolor('#F8F9FA')
+    sns.heatmap(transition_matrix_df, annot=True, fmt=".2f", cmap="crest", 
+                linewidths=0.5, linecolor='#FFFFFF',
+                cbar_kws={'label': 'Geçiş Olasılığı'})
+    plt.title("Otomata Geçiş Olasılıkları Isı Haritası", fontsize=14, pad=15, color='#2C3E50', weight='bold')
+    plt.xlabel("Hedef Durum (To State)", fontsize=11, color='#34495E', labelpad=10)
+    plt.ylabel("Kaynak Durum (From State)", fontsize=11, color='#34495E', labelpad=10)
+    plt.xticks(rotation=45, ha='right', color='#7F8C8D')
+    plt.yticks(rotation=0, color='#7F8C8D')
     plt.tight_layout()
     
     os.makedirs(save_dir, exist_ok=True)
-    plt.savefig(os.path.join(save_dir, "automata_transition_heatmap.png"))
+    plt.savefig(os.path.join(save_dir, "automata_transition_heatmap.png"), dpi=300, bbox_inches='tight', facecolor='#F8F9FA')
     plt.close()
 
 
