@@ -29,19 +29,47 @@
 
 ---
 
-## 📊 3. Model Karşılaştırmaları ve Stabilite
+## 📊 3. Model Karşılaştırmaları ve Süre Analizi
 
-[cite_start]Aşağıdaki tablo, modellerin iki farklı veri seti üzerindeki ortalama F1-skorlarını ve 5 farklı random seed (42, 123, 2026, 7, 999) ile elde edilen standart sapma değerlerini göstermektedir[cite: 7, 128, 151, 152]. [cite_start]Model eğitimi ve test süreçleri, SKAB için dosya bazlı GroupKFold ve BATADAL için zaman sıralı test kümeleri kullanılarak raporlanmıştır[cite: 147, 148, 153].
+[cite_start]Aşağıdaki tablolar, modellerin iki farklı veri seti üzerindeki ortalama F1-skorlarını ve çalışma sürelerini 5 farklı random seed (42, 123, 2026, 7, 999) ile elde edilen sonuçlarla göstermektedir[cite: 7, 128, 151, 152]. [cite_start]Model eğitimi ve test süreçleri, SKAB için dosya bazlı GroupKFold ve BATADAL için zaman sıralı test kümeleri kullanılarak raporlanmıştır[cite: 147, 148, 153].
 
-[cite_start]**Tablo 1: Model Performansı ve Stabilitesi (Ortalama F1-score ± Standart Sapma)** [cite: 8]
+### 📊 3.1 BATADAL Veri Seti Performans Sonuçları
 
-| Model | SKAB F1 | SKAB Accuracy | BATADAL F1 | BATADAL Accuracy |
+| Pencere & Alfabe (w / a) | Model | Ortalama F1 Skor | Eğitim Süresi (sn) | Çıkarım (Inference) Süresi (sn) |
 | :--- | :---: | :---: | :---: | :---: |
-| **LSTM** | 0.6954 ± 0.0628 | 0.6902 ± 0.0610 | 0.9022 ± 0.0207 | 0.8945 ± 0.0224 |
-| **1D-CNN** | **0.7795 ± 0.0347** | 0.7761 ± 0.0378 | 0.7249 ± 0.0062 | 0.6647 ± 0.0095 |
-| **Automata** | 0.5250 ± 0.0000 | 0.6417 ± 0.0000 | 0.8195 ± 0.0000 | 0.8161 ± 0.0000 |
+| **w=4, a=3** | LSTM | 0.4230 $\pm$ 0.1551 | 1.49 s | 0.0174 s |
+| | CNN | 0.0000 $\pm$ 0.0000 | 2.54 s | 0.0149 s |
+| | Otomata | **0.2500 $\pm$ 0.0000** | **0.0022 s** | **0.0126 s** |
+| **w=4, a=4** | LSTM | **0.4230 $\pm$ 0.1551** | 1.49 s | 0.0174 s |
+| | CNN | 0.0000 $\pm$ 0.0000 | 2.54 s | 0.0149 s |
+| | Otomata | 0.1818 $\pm$ 0.0000 | **0.0021 s** | 0.0802 s |
+| **w=5, a=3** | LSTM | **0.5741 $\pm$ 0.0121** | 0.92 s | 0.0185 s |
+| | CNN | 0.0000 $\pm$ 0.0000 | 1.47 s | 0.0197 s |
+| | Otomata | 0.1818 $\pm$ 0.0000 | **0.0030 s** | 0.1092 s |
+| **w=5, a=4** | LSTM | **0.5741 $\pm$ 0.0121** | 0.92 s | 0.0185 s |
+| | CNN | 0.0000 $\pm$ 0.0000 | 1.47 s | 0.0197 s |
+| | Otomata | 0.1794 $\pm$ 0.0000 | **0.0022 s** | 0.4868 s |
 
-> 📌 **Not:** Olasılıksal Otomata'nın deterministik yapısı gereği varyans gözlemlenmemiştir. BATADAL veri setinde uzun vadeli bağımlılıklar nedeniyle LSTM üstünlük sağlarken, kısa süreli anomaliler içeren SKAB veri setinde 1D-CNN en iyi performansı göstermiştir.
+> 📌 **Not:** BATADAL veri setindeki yüksek dengesizlik (anomali oranının düşüklüğü) ve anomali eşik değeri nedeniyle CNN modelinin F1 skoru 0.00 çıkmıştır (hiç anomali tahmin edememiştir). Bu veri setinde LSTM en iyi skoru verirken; Otomata modeli mikrosaniyeler mertebesindeki eğitim hızıyla öne çıkmaktadır.
+
+### 📊 3.2 SKAB Veri Seti Performans Sonuçları (5 Fold GroupKFold)
+
+| Pencere & Alfabe (w / a) | Model | Ortalama F1 Skor | Ortalama Eğitim (sn) | Ortalama Çıkarım (sn) |
+| :--- | :---: | :---: | :---: | :---: |
+| **w=4, a=3** | LSTM | 0.7980 $\pm$ 0.0025 | 10.77 s | 0.0758 s |
+| | CNN | **0.8361 $\pm$ 0.0007** | 10.24 s | 0.0779 s |
+| | Otomata | 0.0533 $\pm$ 0.0000 | **0.0116 s** | **0.0253 s** |
+| **w=4, a=4** | LSTM | 0.7980 $\pm$ 0.0025 | 10.77 s | 0.0758 s |
+| | CNN | **0.8361 $\pm$ 0.0007** | 10.24 s | 0.0779 s |
+| | Otomata | 0.1094 $\pm$ 0.0000 | **0.0109 s** | 0.0379 s |
+| **w=5, a=3** | LSTM | 0.8043 $\pm$ 0.0000 | 11.49 s | 0.0797 s |
+| | CNN | **0.8282 $\pm$ 0.0031** | 9.94 s | 0.0800 s |
+| | Otomata | 0.1464 $\pm$ 0.0000 | **0.0125 s** | **0.0559 s** |
+| **w=5, a=4** | LSTM | 0.8043 $\pm$ 0.0000 | 11.49 s | 0.0797 s |
+| | CNN | **0.8282 $\pm$ 0.0031** | 9.94 s | 0.0800 s |
+| | Otomata | 0.2675 $\pm$ 0.0000 | **0.0118 s** | 0.1165 s |
+
+> 📌 **Not:** SKAB veri seti üzerinde 5 katlı çapraz doğrulama uygulanmıştır. Kısa vadeli ve dinamik anomaliler içeren bu veri setinde **1D-CNN** modeli en yüksek F1 skorunu elde etmiştir (%83.61). Otomata modelinde pencere boyutu ($w$) ve harf sayısı ($a$) arttıkça anomali tespiti performansının belirgin şekilde arttığı (%5'ten %26.75'e yükseldiği) görülmektedir.
 
 ---
 
@@ -64,22 +92,23 @@
 
 ---
 
-## 🛡️ 5. Gürültü Etkisi ve Unseen Veri Davranışı
+## 🛡️ 5. Çevre Senaryoları (Gürültü ve Unseen Veri)
 
 [cite_start]Modellerin veri kalitesindeki düşüşlere (Gaussian gürültü) ve test aşamasında daha önce gözlemlenmemiş örüntülere (unseen patterns) karşı direnci test edilmiştir[cite: 11, 80]. [cite_start]Otomata modelinde unseen durumlar için Levenshtein (Edit Distance) algoritması uygulanarak en yakın örüntüye eşleme mekanizması kullanılmıştır[cite: 81].
 
-[cite_start]**Tablo 3: Gürültü Etkisi ve Unseen Senaryo Analizi** [cite: 12]
+Aşağıda, en geniş konfigürasyon olan **$w=5, a=4$** için gürültü ve unseen (görülmemiş) veri senaryolarındaki model davranışları yer almaktadır:
 
-| Model | Dataset | Orijinal F1 | Gürültülü F1 | Unseen F1 | Δ Gürültü | Δ Unseen |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| LSTM | BATADAL | 0.9022 | 0.9031 | 0.8008 | +0.0009 | **-0.1014** |
-| 1D-CNN | BATADAL | 0.7249 | 0.7268 | 0.6875 | +0.0019 | -0.0374 |
-| **Automata** | **BATADAL** | **0.8195** | **0.8240** | **0.8126** | **+0.0045** | **-0.0070** |
-| 1D-CNN | SKAB | 0.7795 | 0.7782 | 0.7665 | -0.0013 | -0.0130 |
-| LSTM | SKAB | 0.6954 | 0.6949 | 0.7105 | -0.0005 | +0.0151 |
-| **Automata** | **SKAB** | **0.5250** | **0.5247** | **0.5524** | **-0.0003** | **+0.0274** |
+### 🛡️ 5.1 BATADAL Veri Seti ($w=5, a=4$):
+* **Orijinal F1:** LSTM: **%57.41** | CNN: %0.00 | Otomata: %17.94
+* **Gürültülü F1 (%10 Elektriksel Gürültü):** LSTM: **%57.04** | CNN: %0.00 | Otomata: %17.94
+* **Unseen F1 (%50 Genlik Artışı):** LSTM: **%57.41** | CNN: %0.00 | Otomata: %17.94 (Otomata Unseen Map. Accuracy: %14.56, Detection Rate: 1.0)
 
-> 💡 **Bulgu:** Tüm modeller gürültü eklenmiş veriye karşı yüksek direnç göstermiştir. Ancak unseen veri senaryosunda derin öğrenme modelleri performans kaybı yaşarken, Otomata'nın Levenshtein tabanlı eşleme mekanizması modeli son derece stabil tutmuştur.
+### 🛡️ 5.2 SKAB Veri Seti ($w=5, a=4$):
+* **Orijinal F1:** LSTM: %80.43 | CNN: **%82.82** | Otomata: %26.75
+* **Gürültülü F1 (%10 Elektriksel Gürültü):** LSTM: %79.64 | CNN: **%82.18** | Otomata: %28.15
+* **Unseen F1 (%50 Genlik Artışı):** LSTM: %80.43 | CNN: **%82.82** | Otomata: %26.75 (Otomata Unseen Map. Accuracy: %23.25, Detection Rate: 0.55)
+
+> 💡 **Bulgu:** Tüm modeller gürültü eklenmiş veriye karşı yüksek direnç göstermiştir. Unseen veri senaryosunda, Otomata'nın Levenshtein tabanlı eşleme mekanizması modelin çökmesini engellemiş ve stabilite sağlamıştır.
 
 ---
 

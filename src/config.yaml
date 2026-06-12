@@ -4,7 +4,7 @@ project:
   data_dir: "../data/raw"
 
 experiment:
-  random_seeds: [42, 123, 2026, 7, 999]
+  random_seeds: [42, 123]
   # Model dayanıklılığını ölçmek için senaryolarımız
   scenarios:
     - "original"
@@ -20,9 +20,9 @@ experiment:
   unseen_data_scale: 1.5
 
 deep_learning:
-  epoch_limit: 50
+  epoch_limit: 15
   batch_size: 32
-  early_stopping_patience: 5
+  early_stopping_patience: 3
   learning_rate: 0.0005
   # 0.0 ile 1.0 arasındaki anomali olasılık skorunu ikili koda (binary) çevirir
   classification_threshold: 0.5
@@ -35,8 +35,8 @@ deep_learning:
     kernel_size: 3
 
 automata:
-  window_size_variants: [3, 4, 5, 6]
-  alphabet_size_variants: [3, 4, 5, 6]
+  window_size_variants: [4, 5]
+  alphabet_size_variants: [3, 4]
   default_window_size: 4
   default_alphabet_size: 3
   anomaly_threshold: 0.01

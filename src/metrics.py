@@ -40,7 +40,10 @@ def run_wilcoxon_paired_f1(scores_a, scores_b):
         return {"statistic": 0.0, "p_value": 1.0, "significant": False}
     if np.array_equal(a, b):
         return {"statistic": 0.0, "p_value": 1.0, "significant": False}
-    stat, p_value = wilcoxon(a, b)
+    try:
+        stat, p_value = wilcoxon(a, b)
+    except ValueError:
+        return {"statistic": 0.0, "p_value": 1.0, "significant": False}
     return {
         "statistic": float(stat),
         "p_value": float(p_value),

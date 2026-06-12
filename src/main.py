@@ -246,130 +246,143 @@ def run_experiment_pipeline():
 
         for scenario in config["experiment"]["scenarios"]:
             for window_size in window_variants:
-                for alphabet_size in alphabet_variants:
-                    tag = (
-                        f"{dataset_name} | {scenario} | "
-                        f"w={window_size} | a={alphabet_size}"
-                    )
-                    print(f"\n--- {tag} ---")
+                combo_lstm_f1 = {a: [] for a in alphabet_variants}
+                combo_cnn_f1 = {a: [] for a in alphabet_variants}
+                combo_auto_f1 = {a: [] for a in alphabet_variants}
+                combo_auto_unseen_map = {a: [] for a in alphabet_variants}
+                combo_auto_unseen_det = {a: [] for a in alphabet_variants}
 
-                    lstm_f1_scores = []
-                    cnn_f1_scores = []
-                    auto_f1_scores = []
-                    auto_unseen_map_accs = []
-                    auto_unseen_det_rates = []
+                for seed in config["experiment"]["random_seeds"]:
+                    set_seed(seed)
+                    split_dl_results = []
 
-                    for seed in config["experiment"]["random_seeds"]:
-                        set_seed(seed)
+                    for split_idx, split_info in enumerate(splits):
+                        if len(split_info) == 3:
+                            train_idx, val_idx, test_idx = split_info
+                        else:
+                            train_val_idx, test_idx = split_info
+                            split_point = int(len(train_val_idx) * skab_val_split)
+                            train_idx = train_val_idx[:split_point]
+                            val_idx = train_val_idx[split_point:]
+
+                        processed = pipeline.preprocess_features(
+                            df, train_idx, val_idx, test_idx, feature_cols
+                        )
+                        dl_data = processed["deep_learning"]
+                        auto_data = processed["automata"]
+
+                        X_test_dl = dl_data["test"].copy()
+                        X_test_auto = auto_data["test"].copy()
+                        if scenario == "gaussian_noise":
+                            X_test_dl = add_gaussian_noise(
+                                X_test_dl, noise_cfg["mean"], noise_cfg["std"]
+                            )
+                            X_test_auto = add_gaussian_noise(
+                                X_test_auto, noise_cfg["mean"], noise_cfg["std"]
+                            )
+                        elif scenario == "unseen_data":
+                            X_test_auto = X_test_auto * unseen_scale
+
+                        y_test = df.loc[test_idx, target_col].values
+                        y_val = df.loc[val_idx, target_col].values
+                        split_label = (
+                            f"fold_{split_idx}" if dataset_name == "SKAB" else "full"
+                        )
+
+                        train_ds = TimeSeriesDataset(
+                            dl_data["train"],
+                            df.loc[train_idx, target_col].values,
+                            window_size,
+                        )
+                        val_ds = TimeSeriesDataset(
+                            dl_data["val"],
+                            df.loc[val_idx, target_col].values,
+                            window_size,
+                        )
+                        test_ds = TimeSeriesDataset(X_test_dl, y_test, window_size)
+                        train_loader = DataLoader(
+                            train_ds, batch_size=batch_size, shuffle=False
+                        )
+                        val_loader = DataLoader(
+                            val_ds, batch_size=batch_size, shuffle=False
+                        )
+                        test_loader = DataLoader(
+                            test_ds, batch_size=batch_size, shuffle=False
+                        )
+
+                        # === LSTM MODEL ===
+                        lstm = LSTMAnomalyDetector(
+                            input_size=dl_data["train"].shape[1],
+                            hidden_size=config["deep_learning"]["lstm"]["hidden_size"],
+                            num_layers=config["deep_learning"]["lstm"]["num_layers"],
+                            dropout=config["deep_learning"]["lstm"]["dropout"],
+                        )
+                        start_time = time.time()
+                        lstm = train_model(lstm, train_loader, val_loader, config, seed)
+                        lstm_train_time = time.time() - start_time
+
+                        lstm_val_probs = evaluate_val_predictions(lstm, val_loader, window_size, device)
+                        lstm_opt_thresh = optimize_threshold(lstm_val_probs, y_val)
+                        if lstm_opt_thresh is None or lstm_opt_thresh <= 0:
+                            lstm_opt_thresh = clf_threshold
+
+                        start_time = time.time()
+                        lstm_probs, lstm_binary = evaluate_model_predictions(
+                            lstm, test_loader, window_size, device, lstm_opt_thresh
+                        )
+                        lstm_infer_time = time.time() - start_time
+                        lstm_m = calculate_metrics(y_test, lstm_binary, threshold=lstm_opt_thresh)
+
+                        # === CNN MODEL ===
+                        cnn = CNN1DAnomalyDetector(
+                            input_size=dl_data["train"].shape[1],
+                            filters=config["deep_learning"]["cnn_1d"]["filters"],
+                            kernel_size=config["deep_learning"]["cnn_1d"]["kernel_size"],
+                        )
+                        start_time = time.time()
+                        cnn = train_model(cnn, train_loader, val_loader, config, seed)
+                        cnn_train_time = time.time() - start_time
+
+                        cnn_val_probs = evaluate_val_predictions(cnn, val_loader, window_size, device)
+                        cnn_opt_thresh = optimize_threshold(cnn_val_probs, y_val)
+                        if cnn_opt_thresh is None or cnn_opt_thresh <= 0:
+                            cnn_opt_thresh = clf_threshold
+
+                        start_time = time.time()
+                        cnn_probs, cnn_binary = evaluate_model_predictions(
+                            cnn, test_loader, window_size, device, cnn_opt_thresh
+                        )
+                        cnn_infer_time = time.time() - start_time
+                        cnn_m = calculate_metrics(y_test, cnn_binary, threshold=cnn_opt_thresh)
+
+                        split_dl_results.append({
+                            "split_idx": split_idx,
+                            "split_label": split_label,
+                            "y_test": y_test,
+                            "auto_data": auto_data,
+                            "X_test_auto": X_test_auto,
+                            "lstm_binary": lstm_binary,
+                            "lstm_probs": lstm_probs,
+                            "lstm_train_time": lstm_train_time,
+                            "lstm_infer_time": lstm_infer_time,
+                            "lstm_m": lstm_m,
+                            "cnn_binary": cnn_binary,
+                            "cnn_probs": cnn_probs,
+                            "cnn_train_time": cnn_train_time,
+                            "cnn_infer_time": cnn_infer_time,
+                            "cnn_m": cnn_m,
+                        })
+
+                    for alphabet_size in alphabet_variants:
                         seed_lstm_f1, seed_cnn_f1, seed_auto_f1 = [], [], []
-                        seed_lstm_all, seed_cnn_all, seed_auto_all = [], [], []
 
-                        for split_idx, split_info in enumerate(splits):
-                            if len(split_info) == 3:
-                                train_idx, val_idx, test_idx = split_info
-                            else:
-                                train_val_idx, test_idx = split_info
-                                split_point = int(len(train_val_idx) * skab_val_split)
-                                train_idx = train_val_idx[:split_point]
-                                val_idx = train_val_idx[split_point:]
-
-                            processed = pipeline.preprocess_features(
-                                df, train_idx, val_idx, test_idx, feature_cols
-                            )
-                            dl_data = processed["deep_learning"]
-                            auto_data = processed["automata"]
-
-                            X_test_dl = dl_data["test"].copy()
-                            X_test_auto = auto_data["test"].copy()
-                            if scenario == "gaussian_noise":
-                                X_test_dl = add_gaussian_noise(
-                                    X_test_dl, noise_cfg["mean"], noise_cfg["std"]
-                                )
-                                X_test_auto = add_gaussian_noise(
-                                    X_test_auto, noise_cfg["mean"], noise_cfg["std"]
-                                )
-                            elif scenario == "unseen_data":
-                                X_test_auto = X_test_auto * unseen_scale
-
-                            y_test = df.loc[test_idx, target_col].values
-                            split_label = (
-                                f"fold_{split_idx}" if dataset_name == "SKAB" else "full"
-                            )
-                            results_dir = os.path.join(
-                                results_root,
-                                dataset_name,
-                                scenario,
-                                f"w{window_size}_a{alphabet_size}",
-                                f"seed_{seed}",
-                                split_label,
-                            )
-                            os.makedirs(results_dir, exist_ok=True)
-
-                            train_ds = TimeSeriesDataset(
-                                dl_data["train"],
-                                df.loc[train_idx, target_col].values,
-                                window_size,
-                            )
-                            val_ds = TimeSeriesDataset(
-                                dl_data["val"],
-                                df.loc[val_idx, target_col].values,
-                                window_size,
-                            )
-                            test_ds = TimeSeriesDataset(X_test_dl, y_test, window_size)
-                            train_loader = DataLoader(
-                                train_ds, batch_size=batch_size, shuffle=False
-                            )
-                            val_loader = DataLoader(
-                                val_ds, batch_size=batch_size, shuffle=False
-                            )
-                            test_loader = DataLoader(
-                                test_ds, batch_size=batch_size, shuffle=False
-                            )
-
-                            y_val = df.loc[val_idx, target_col].values
-
-                            # === LSTM MODEL ===
-                            lstm = LSTMAnomalyDetector(
-                                input_size=dl_data["train"].shape[1],
-                                hidden_size=config["deep_learning"]["lstm"]["hidden_size"],
-                                num_layers=config["deep_learning"]["lstm"]["num_layers"],
-                                dropout=config["deep_learning"]["lstm"]["dropout"],
-                            )
-                            start_time = time.time()
-                            lstm = train_model(lstm, train_loader, val_loader, config, seed)
-                            lstm_train_time = time.time() - start_time
-
-                            lstm_val_probs = evaluate_val_predictions(lstm, val_loader, window_size, device)
-                            lstm_opt_thresh = optimize_threshold(lstm_val_probs, y_val)
-                            if lstm_opt_thresh is None or lstm_opt_thresh <= 0:
-                                lstm_opt_thresh = clf_threshold
-
-                            start_time = time.time()
-                            lstm_probs, lstm_binary = evaluate_model_predictions(
-                                lstm, test_loader, window_size, device, lstm_opt_thresh
-                            )
-                            lstm_infer_time = time.time() - start_time
-
-                            # === CNN MODEL ===
-                            cnn = CNN1DAnomalyDetector(
-                                input_size=dl_data["train"].shape[1],
-                                filters=config["deep_learning"]["cnn_1d"]["filters"],
-                                kernel_size=config["deep_learning"]["cnn_1d"]["kernel_size"],
-                            )
-                            start_time = time.time()
-                            cnn = train_model(cnn, train_loader, val_loader, config, seed)
-                            cnn_train_time = time.time() - start_time
-
-                            cnn_val_probs = evaluate_val_predictions(cnn, val_loader, window_size, device)
-                            cnn_opt_thresh = optimize_threshold(cnn_val_probs, y_val)
-                            if cnn_opt_thresh is None or cnn_opt_thresh <= 0:
-                                cnn_opt_thresh = clf_threshold
-
-                            start_time = time.time()
-                            cnn_probs, cnn_binary = evaluate_model_predictions(
-                                cnn, test_loader, window_size, device, cnn_opt_thresh
-                            )
-                            cnn_infer_time = time.time() - start_time
+                        for dl_res in split_dl_results:
+                            split_label = dl_res["split_label"]
+                            y_test = dl_res["y_test"]
+                            auto_data = dl_res["auto_data"]
+                            X_test_auto = dl_res["X_test_auto"]
+                            lstm_m = dl_res["lstm_m"]
+                            cnn_m = dl_res["cnn_m"]
 
                             # === AUTOMATA MODEL ===
                             start_time = time.time()
@@ -402,6 +415,16 @@ def run_experiment_pipeline():
                             test_patterns = pc1_to_patterns(
                                 X_test_auto, paa_window, alphabet_size, window_size
                             )
+                            results_dir = os.path.join(
+                                results_root,
+                                dataset_name,
+                                scenario,
+                                f"w{window_size}_a{alphabet_size}",
+                                f"seed_{seed}",
+                                split_label,
+                            )
+                            os.makedirs(results_dir, exist_ok=True)
+
                             engine = ExplainabilityEngine(
                                 automaton=automaton,
                                 training_vocabulary=set(train_patterns),
@@ -418,7 +441,6 @@ def run_experiment_pipeline():
                                 for e in explanations
                             ]
 
-                            # Automata tahminlerini orijinal zaman serisi cozunurlugune upsample et
                             auto_preds_sax_padded = [0] * (window_size - 1) + auto_preds_sax
                             auto_preds_upsampled = np.repeat(auto_preds_sax_padded, paa_window)
 
@@ -430,8 +452,8 @@ def run_experiment_pipeline():
 
                             auto_preds = list(auto_preds_upsampled.astype(int))
                             auto_infer_time = time.time() - start_time
+                            auto_m = calculate_metrics(y_test, auto_preds)
 
-                            # Unseen senaryo metrikleri: Mapping Accuracy ve Detection Rate
                             mapping_accuracy = "N/A"
                             detection_rate = "N/A"
                             if scenario == "unseen_data":
@@ -449,17 +471,12 @@ def run_experiment_pipeline():
                                     tp = np.sum((unseen_preds == 1) & (unseen_y_true == 1))
                                     fn = np.sum((unseen_preds == 0) & (unseen_y_true == 1))
                                     detection_rate = float(tp / (tp + fn) if (tp + fn) > 0 else 0.0)
-                                    auto_unseen_map_accs.append(mapping_accuracy)
-                                    auto_unseen_det_rates.append(detection_rate)
-
-                            # === METRIK HESAPLAMA ===
-                            lstm_m = calculate_metrics(y_test, lstm_binary, threshold=lstm_opt_thresh)
-                            cnn_m = calculate_metrics(y_test, cnn_binary, threshold=cnn_opt_thresh)
-                            auto_m = calculate_metrics(y_test, auto_preds)
+                                    combo_auto_unseen_map[alphabet_size].append(mapping_accuracy)
+                                    combo_auto_unseen_det[alphabet_size].append(detection_rate)
 
                             for model_name, metrics, t_time, i_time, map_acc, det_rt in [
-                                ("LSTM", lstm_m, lstm_train_time, lstm_infer_time, "N/A", "N/A"),
-                                ("CNN", cnn_m, cnn_train_time, cnn_infer_time, "N/A", "N/A"),
+                                ("LSTM", lstm_m, dl_res["lstm_train_time"], dl_res["lstm_infer_time"], "N/A", "N/A"),
+                                ("CNN", cnn_m, dl_res["cnn_train_time"], dl_res["cnn_infer_time"], "N/A", "N/A"),
                                 ("Automata", auto_m, auto_train_time, auto_infer_time, mapping_accuracy, detection_rate),
                             ]:
                                 _append_metric_row(
@@ -483,38 +500,106 @@ def run_experiment_pipeline():
                             seed_lstm_f1.append(lstm_m["f1"])
                             seed_cnn_f1.append(cnn_m["f1"])
                             seed_auto_f1.append(auto_m["f1"])
-                            seed_lstm_all.append(lstm_m)
-                            seed_cnn_all.append(cnn_m)
-                            seed_auto_all.append(auto_m)
 
                             lbl = f"{dataset_name}-{scenario}-w{window_size}-s{seed}"
-                            plot_confusion_matrix(y_test, lstm_binary, f"LSTM-{lbl}", results_dir)
-                            plot_confusion_matrix(y_test, cnn_binary, f"CNN1D-{lbl}", results_dir)
+                            plot_confusion_matrix(y_test, dl_res["lstm_binary"], f"LSTM-{lbl}", results_dir)
+                            plot_confusion_matrix(y_test, dl_res["cnn_binary"], f"CNN1D-{lbl}", results_dir)
                             plot_confusion_matrix(y_test, auto_preds, f"Automata-{lbl}", results_dir)
-                            plot_roc_curve(y_test, lstm_probs, f"LSTM-{lbl}", results_dir)
-                            plot_roc_curve(y_test, cnn_probs, f"CNN1D-{lbl}", results_dir)
-                            plot_automata_state_diagram(automaton.to_dataframe(), save_dir=results_dir)
-                            plot_transition_heatmap(automaton.to_dataframe(), save_dir=results_dir)
+                            plot_roc_curve(y_test, dl_res["lstm_probs"], f"LSTM-{lbl}", results_dir)
+                            plot_roc_curve(y_test, dl_res["cnn_probs"], f"CNN1D-{lbl}", results_dir)
+
+                            is_representative = (
+                                seed == 42
+                                and scenario == "original"
+                                and window_size == config["automata"]["default_window_size"]
+                                and alphabet_size == config["automata"]["default_alphabet_size"]
+                                and (split_label == "full" or split_label == "fold_0")
+                            )
+
+                            if is_representative:
+                                # Save heavy plots in both results_dir and results_root
+                                plot_automata_state_diagram(automaton.to_dataframe(), save_dir=results_dir)
+                                plot_transition_heatmap(automaton.to_dataframe(), save_dir=results_dir)
+                                plot_automata_state_diagram(automaton.to_dataframe(), save_dir=results_root)
+                                plot_transition_heatmap(automaton.to_dataframe(), save_dir=results_root)
+                                
+                                # Save standard named files in results_root for README
+                                plot_confusion_matrix(y_test, dl_res["lstm_binary"], "LSTM", results_root)
+                                plot_confusion_matrix(y_test, auto_preds, "Automata", results_root)
+                                plot_roc_curve(y_test, dl_res["lstm_probs"], "LSTM", results_root)
 
                         if dataset_name == "SKAB":
                             _log_line(
                                 log_path,
-                                f"[SKAB fold ort.] {tag} seed={seed} | "
+                                f"[SKAB fold ort.] {dataset_name} | {scenario} | w={window_size} | a={alphabet_size} seed={seed} | "
                                 f"LSTM F1: {np.mean(seed_lstm_f1):.4f} +- {np.std(seed_lstm_f1):.4f} | "
                                 f"CNN F1: {np.mean(seed_cnn_f1):.4f} +- {np.std(seed_cnn_f1):.4f} | "
                                 f"Otomata F1: {np.mean(seed_auto_f1):.4f} +- {np.std(seed_auto_f1):.4f}",
                             )
 
-                        lstm_f1_scores.append(float(np.mean(seed_lstm_f1)))
-                        cnn_f1_scores.append(float(np.mean(seed_cnn_f1)))
-                        auto_f1_scores.append(float(np.mean(seed_auto_f1)))
+                        combo_lstm_f1[alphabet_size].append(float(np.mean(seed_lstm_f1)))
+                        combo_cnn_f1[alphabet_size].append(float(np.mean(seed_cnn_f1)))
+                        combo_auto_f1[alphabet_size].append(float(np.mean(seed_auto_f1)))
 
-                    lstm_train_times = [r["training_time"] for r in experiment_rows if r["model"] == "LSTM" and r["dataset"] == dataset_name and r["window_size"] == window_size and r["alphabet_size"] == alphabet_size]
-                    lstm_infer_times = [r["inference_time"] for r in experiment_rows if r["model"] == "LSTM" and r["dataset"] == dataset_name and r["window_size"] == window_size and r["alphabet_size"] == alphabet_size]
-                    cnn_train_times = [r["training_time"] for r in experiment_rows if r["model"] == "CNN" and r["dataset"] == dataset_name and r["window_size"] == window_size and r["alphabet_size"] == alphabet_size]
-                    cnn_infer_times = [r["inference_time"] for r in experiment_rows if r["model"] == "CNN" and r["dataset"] == dataset_name and r["window_size"] == window_size and r["alphabet_size"] == alphabet_size]
-                    auto_train_times = [r["training_time"] for r in experiment_rows if r["model"] == "Automata" and r["dataset"] == dataset_name and r["window_size"] == window_size and r["alphabet_size"] == alphabet_size]
-                    auto_infer_times = [r["inference_time"] for r in experiment_rows if r["model"] == "Automata" and r["dataset"] == dataset_name and r["window_size"] == window_size and r["alphabet_size"] == alphabet_size]
+                for alphabet_size in alphabet_variants:
+                    tag = (
+                        f"{dataset_name} | {scenario} | "
+                        f"w={window_size} | a={alphabet_size}"
+                    )
+                    lstm_f1_scores = combo_lstm_f1[alphabet_size]
+                    cnn_f1_scores = combo_cnn_f1[alphabet_size]
+                    auto_f1_scores = combo_auto_f1[alphabet_size]
+                    auto_unseen_map_accs = combo_auto_unseen_map[alphabet_size]
+                    auto_unseen_det_rates = combo_auto_unseen_det[alphabet_size]
+
+                    lstm_train_times = [
+                        r["training_time"]
+                        for r in experiment_rows
+                        if r["model"] == "LSTM"
+                        and r["dataset"] == dataset_name
+                        and r["window_size"] == window_size
+                        and r["alphabet_size"] == alphabet_size
+                    ]
+                    lstm_infer_times = [
+                        r["inference_time"]
+                        for r in experiment_rows
+                        if r["model"] == "LSTM"
+                        and r["dataset"] == dataset_name
+                        and r["window_size"] == window_size
+                        and r["alphabet_size"] == alphabet_size
+                    ]
+                    cnn_train_times = [
+                        r["training_time"]
+                        for r in experiment_rows
+                        if r["model"] == "CNN"
+                        and r["dataset"] == dataset_name
+                        and r["window_size"] == window_size
+                        and r["alphabet_size"] == alphabet_size
+                    ]
+                    cnn_infer_times = [
+                        r["inference_time"]
+                        for r in experiment_rows
+                        if r["model"] == "CNN"
+                        and r["dataset"] == dataset_name
+                        and r["window_size"] == window_size
+                        and r["alphabet_size"] == alphabet_size
+                    ]
+                    auto_train_times = [
+                        r["training_time"]
+                        for r in experiment_rows
+                        if r["model"] == "Automata"
+                        and r["dataset"] == dataset_name
+                        and r["window_size"] == window_size
+                        and r["alphabet_size"] == alphabet_size
+                    ]
+                    auto_infer_times = [
+                        r["inference_time"]
+                        for r in experiment_rows
+                        if r["model"] == "Automata"
+                        and r["dataset"] == dataset_name
+                        and r["window_size"] == window_size
+                        and r["alphabet_size"] == alphabet_size
+                    ]
 
                     unseen_metrics_str = ""
                     if scenario == "unseen_data" and auto_unseen_map_accs:
